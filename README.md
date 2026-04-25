@@ -70,6 +70,12 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 | Levantamentos| 25/04 a 26/04|
 | Prótotipos | 26/04 a 26/05 |
 | implementação | 25/05 a 26/05 |
+
+## Sprints
+
+| Sprints | Entregas |
+|---------|----------|
+| Sprint1 | Login + banco |
 ---------------------------------------------
 
 ---
