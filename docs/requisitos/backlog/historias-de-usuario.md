@@ -4,7 +4,7 @@ Este documento consolida todas as 15 Histórias de Usuário (HUs) planejadas ao 
 
 ---
 
-## 🟢 Sprints 1 e 2: Fluxo Essencial de Reserva
+## Sprints 1 e 2: Fluxo Essencial de Reserva
 *Foco: Reserva, Consulta e Aprovação.*
 
 - **HU01 - Consulta de Disponibilidade:** Como Professor, quero consultar a disponibilidade de salas em um período, para evitar conflitos antes de reservar.
@@ -16,7 +16,7 @@ Este documento consolida todas as 15 Histórias de Usuário (HUs) planejadas ao 
 
 ---
 
-## 🟡 Sprint 3: Manutenção e Segurança
+## Sprint 3: Manutenção e Segurança
 *Foco: Saúde das salas e acesso ao sistema.*
 
 - **HU06 - Reporte de Problemas:** Como Professor, quero reportar falhas (ex: projetor quebrado), para acionar a equipe de manutenção.
@@ -28,7 +28,7 @@ Este documento consolida todas as 15 Histórias de Usuário (HUs) planejadas ao 
 
 ---
 
-## 🔵 Sprint 4: Experiência do Usuário (UX) e Relatórios
+## Sprint 4: Experiência do Usuário (UX) e Relatórios
 *Foco: Transparência e detalhes.*
 
 - **HU08 - Detalhes da Reserva:** Como Professor/Coordenador, quero ver o histórico completo de uma reserva (quem aprovou, quando e por quê).
