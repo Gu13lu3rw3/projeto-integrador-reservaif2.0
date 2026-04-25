@@ -1,11 +1,11 @@
 # Atores do Sistema - ReservaIF 2.0
 
-Este documento detalha os perfis de usuários e suas permissões dentro do ecossistema do ReservaIF 2.0, conforme definido no planejamento das Sprints 1 a 4.
+Detalhamento dos perfis de usuários e suas permissões dentro do ecossistema do ReservaIF 2.0, conforme definido no planejamento das Sprints 1 a 4.
 
 ---
 
 ## 1. Professor (Usuário Final)
-O ator principal que utiliza os recursos para atividades pedagógicas.
+O ator principal que utiliza os recursos para atividades pedagógicas. Resumindo, é ele quem solicita as reservas de salas de aula.
 - **Principais Ações:**
     - Consultar disponibilidade de salas e equipamentos em tempo real.
     - Criar pedidos de reserva (HU02) e visualizar o cálculo automático de término.
