@@ -20,7 +20,7 @@ Ely Miranda
 ---
 
 # 2. Problema a ser Resolvido
-A falta de um sistema centralizado para reservas de salas, resultando em conflitos de agendamento e lentidão na gestão de aprovações.
+A falta de um sistema centralizado para reservas de salas, resultando em conflitos de agendamento, lentidão na gestão de aprovações e falta de informações sobre o estado das salas de aula.
 
 ---
 
@@ -35,8 +35,7 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 ---
 
 # 5. Tecnologias Utilizadas
-| Área | Tecnologia |
-|------|------------|
+|   Área   | Tecnologia |
 | Front-end | A definir |
 | Back-end | A definir |
 | Banco | A definir |
