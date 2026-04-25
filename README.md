@@ -56,7 +56,7 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 
 Apenas administradores 
 
-- Professores: Cria pedidos de reserva, reporta problemas de sala, Consulta salas disponiveis
+- Professor: Cria pedidos de reserva, reporta problemas de sala, Consulta salas disponiveis
 
 - Coordenador: Aprova ou rejeita pedidos de reserva de salas, 
 
