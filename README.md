@@ -54,13 +54,13 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
   
 # Regras de Negócio
 
-Apenas administradores 
+- Administrador: pode gerar relatórios de uso das salas para otimizar a distribuição de turmas.
 
-- Professor: Cria pedidos de reserva, reporta problemas de sala, Consulta salas disponiveis
+- Professor: pode consultar a disponibilidade de salas em um período, para evitar conflitos antes de reservar, pode preencher um formulário com cálculo automático de término, para submeter pedidos de reserva, quero que o sistema bloqueie reservas em horários de aulas regulares (Horário Oficial), pode reportar falhas (ex: projetor quebrado), para acionar a equipe de manutenção.
 
-- Coordenador: Aprova ou rejeita pedidos de reserva de salas, 
+- Coordenador: recebe notificações imediatas (in-app/e-mail), para agir rapidamente sobre novos pedidos, tem acesso a uma interface para aprovar ou rejeitar pedidos, para controlar o uso das salas
 
-- Manutenção: Tem acesso aos problemas reportados
+- Manutenção: pode visualizar e filtrar problemas reportados, para agilizar os consertos, pode realizar checklists periódicos. Se um item falhar, a sala deve ser bloqueada automaticamente.
 
 # 9. Planejamento do Projeto
 
