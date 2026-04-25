@@ -41,6 +41,36 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 | Banco | A definir |
 | Prototipação | Figma |
 | Gestão | Trello / Scrum |
+-----------------------------
+
+# 6. Requisitos de sistemas
+
+# Atores 
+
+* ADMINISTRADOR
+* PROFESSOR
+* MANUTENÇÃO
+* COORDENADOR
+  
+# Regras de Negócio
+
+Apenas administradores 
+
+- **Professores: Cria pedidos de reserva, reporta problemas de sala, Consulta salas disponiveis
+
+- **Coordenador: Aprova ou rejeita pedidos de reserva de salas, 
+
+- **Manutenção: Tem acesso aos problemas reportados
+
+# 9. Planejamento do Projeto
+
+## Cronograma 
+| Etapa | Período  |
+|-------|----------|
+| Levantamentos| 25/04 a 26/04|
+| Prótotipos | 26/04 a 26/05 |
+| implementação | 25/05 a 26/05 |
+---------------------------------------------
 
 ---
 
