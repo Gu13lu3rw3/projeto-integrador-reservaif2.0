@@ -113,17 +113,19 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 # 7. Modelagem do Sistema
 
 ## Diagrama de Casos de Uso
+![Casos  de Uso(docs/modelagem/casos-de-uso.png)
 
 ## Fluxo de Telas
+![Fluxo de Telas](docs/modelagem/fluxo-de-telas-png)
 
 ## Arquitetura
+![Arquitetura](modelagem/arquitetura.png)
 
 ## Modelo Entidade-Relacionamento
 ![Modelo ER](docs/modelagem/modelo-er.png)
 
-
-
 ## Diagrama de Classes
+![Diagrama de Classes](docs/modelagem/diagrama-classes.png)
 
 # 8. Protótipos
 
@@ -157,13 +159,53 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 ![trello](docs/planejamento/trello.png)
 
 ## Histórico de Entregas 
-
----------------------------------------------
-
+- Entrega 1:documentação iniccial
+- Entrega 2:protótipos
+- Entrega 3:implementação parcial
 ---
 
 # 10. Banco de Dados
+ ## Estrutura
+
+ Arquivos disponíveis:
+ -'database/ddl.sql'
+ -'database?dml.sql'
+ -'database/schema.sql'
+ -'database/seeds.sql'
+ 
+ ## modelo visual 
+  ![Banco](database/modelo-er.png)
+
+  ## Observações
+  
+  Descrever decisões tomadas na modelagem
+---
 # 11. Implementação
+
+## Backend
+
+Descrever API, rotas ou regras implementadas.
+
+##Frontend
+
+Descrever telas ja desenvolvidas
+**Tela de Detalhe de Reserva: informa o numero da sala, informa horario, informa data e o nome do professor que solicitou a reserva da sala, mostra o status da sala se ela está disponivel pra uso.
+
+**Tela de Histórico de Status: tem o registro de todas as alterções de status de reserva, o nome de quem cria a reserva ( professor ) e quem aprova a reserva ( coordenador ) com data e hora 
+
+** Tela de Notificação: na tela de notificação pode aparecer notificação de salas bloqueadas para a manutenção, reserva cancelada, reserva aprovada e reserva rejeitada todas com data e horario e caso a sala seja rejeitada vai aparecer o motivo da rejeieção na abaixo da notificação 
+
+** Tela de Relatorio de Manutenção: 
+##Funcionalidades Concluídas 
+
+-Login
+-Cadastro
+-consulta
+
+## Funcionalidades em Desenvolvimento
+- Rélatorios
+  Painel administrativo
+  ---
 # 12. Evidências do Projeto
 
 # 13. Itens Ainda Não Produzidos
