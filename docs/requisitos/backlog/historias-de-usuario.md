@@ -12,6 +12,7 @@ Este documento consolida todas as 15 Histórias de Usuário (HUs) planejadas ao 
 - **HU03 - Notificação de Pedido:** Como Coordenador, quero receber notificações imediatas (in-app/e-mail), para agir rapidamente sobre novos pedidos.
 - **HU04 - Gestão de Pedidos:** Como Coordenador, quero uma interface para aprovar ou rejeitar pedidos, para controlar o uso das salas.
 - **HU05 - Verificação de Conflito:** Como Professor, quero que o sistema bloqueie reservas em horários de aulas regulares (Horário Oficial).
+- **HU08 - Cadastro de Salas:** Como Administrador, quero cadastrar salas (nome, capacidade, localização e equipamentos associados), para que o sistema tenha um inventário completo e atualizado dos recursos.
 - **HU11 - Liberação Automática:** Como Sistema, quero liberar a sala automaticamente no minuto exato do término da reserva.
 
 ---
@@ -31,6 +32,6 @@ Este documento consolida todas as 15 Histórias de Usuário (HUs) planejadas ao 
 ## Sprint 4: Experiência do Usuário (UX) e Relatórios
 *Foco: Transparência e detalhes.*
 
-- **HU08 - Detalhes da Reserva:** Como Professor/Coordenador, quero ver o histórico completo de uma reserva (quem aprovou, quando e por quê).
-- **HU09 - Notificações de Status:** Como Usuário, quero receber alertas sempre que o status da minha reserva mudar (ex: de Pendente para Aprovada).
-- **HU15 - Relatórios Estratégicos:** Como Administrador, quero gerar relatórios de uso das salas para otimizar a distribuição de turmas.
+- **HU16 - Detalhes da Reserva (Melhoria):** Como Professor/Coordenador, quero ver o histórico completo de uma reserva.
+- **HU09 - Notificações de Status:** Como Usuário, quero receber alertas de mudança de status.
+- **HU15 - Relatórios Estratégicos:** Como Administrador, quero gerar relatórios de uso.
