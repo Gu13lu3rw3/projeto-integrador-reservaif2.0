@@ -47,10 +47,10 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 
 # Atores 
 
-* ADMINISTRADOR
 * PROFESSOR
-* MANUTENÇÃO
 * COORDENADOR
+* MANUTENÇÃO
+* ADMINISTRADOR
   
 # Regras de Negócio
 
