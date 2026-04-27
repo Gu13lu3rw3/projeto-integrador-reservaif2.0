@@ -35,7 +35,8 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 ---
 
 # 5. Tecnologias Utilizadas
-|   Área   | Tecnologia |
+| Área | Tecnologia |
+|:---:|:---|
 | Front-end | HTML, CSS |
 | Back-end | Flask, Python |
 | Banco | MySQL |
