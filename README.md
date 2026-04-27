@@ -189,13 +189,14 @@ Descrever API, rotas ou regras implementadas.
 ##Frontend
 
 Descrever telas ja desenvolvidas
-**Tela de Detalhe de Reserva: informa o numero da sala, informa horario, informa data e o nome do professor que solicitou a reserva da sala, mostra o status da sala se ela está disponivel pra uso.
+- **Tela de Detalhe de Reserva: informa o numero da sala, informa horario, informa data e o nome do professor que solicitou a reserva da sala, mostra o status da sala se ela está disponivel pra uso.
 
-**Tela de Histórico de Status: tem o registro de todas as alterções de status de reserva, o nome de quem cria a reserva ( professor ) e quem aprova a reserva ( coordenador ) com data e hora 
+- **Tela de Histórico de Status: tem o registro de todas as alterções de status de reserva, o nome de quem cria a reserva ( professor ) e quem aprova a reserva ( coordenador ) com data e hora 
 
-** Tela de Notificação: na tela de notificação pode aparecer notificação de salas bloqueadas para a manutenção, reserva cancelada, reserva aprovada e reserva rejeitada todas com data e horario e caso a sala seja rejeitada vai aparecer o motivo da rejeieção na abaixo da notificação 
+- **Tela de Notificação: na tela de notificação pode aparecer notificação de salas bloqueadas para a manutenção, reserva cancelada, reserva aprovada e reserva rejeitada todas com data e horario e caso a sala seja rejeitada vai aparecer o motivo da rejeieção na abaixo da notificação 
 
-** Tela de Relatorio de Manutenção: 
+- **Tela de Relatorio de Manutenção:
+- 
 ##Funcionalidades Concluídas 
 
 -Login
