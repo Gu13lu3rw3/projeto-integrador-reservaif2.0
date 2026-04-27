@@ -195,7 +195,7 @@ Descrever telas ja desenvolvidas
 
 - **Tela de Notificação:** na tela de notificação pode aparecer notificação de salas bloqueadas para a manutenção, reserva cancelada, reserva aprovada e reserva rejeitada todas com data e horario e caso a sala seja rejeitada vai aparecer o motivo da rejeieção na abaixo da notificação 
 
-- **Tela de Relatorio de Manutenção:
+- **Tela de Relatorio de Manutenção:** A tela de relatorio mostra o analise de problemas e o tempo medio de reparo tem um filtro para relatórios com opções de período, sala, equipamento, status e botões para gerar relatórios e limpar as opções que foram selecionadas, possui uma contagem de quantos problemas tem, o tempo médio e a taxa de resolução. Tem tambem um grafíco de tempo médio de reparo de cada equipamento como projetor, ar-condicionado, cadeiras e iluminação, também há um ranking detalhado sobre a quantidade de equipamentos, o percentual deles e o seu tmr 
 - 
 ##Funcionalidades Concluídas 
 
