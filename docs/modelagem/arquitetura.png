@@ -1,16 +1,1 @@
-# Arquitetura do Sistema - ReservaIF 2.0
 
-O sistema foi desenvolvido utilizando uma arquitetura baseada no padrão **MVC (Model-View-Controller)**, garantindo a separação de responsabilidades e facilidade de manutenção.
-
-## 1. Tecnologias Utilizadas
-- **Frontend:** HTML5, CSS3 e JavaScript (Vanila), focado em uma interface responsiva e limpa.
-- **Backend:** Python com o framework **Flask**, utilizando roteamento manual e explícito.
-- **Banco de Dados:** MySQL (Relacional) para garantir a integridade das reservas.
-
-## 2. Estrutura de Comunicação
-1. **Camada de Visão (Frontend):** Envia requisições HTTP (GET, POST, PUT) contendo dados em formato **JSON**.
-2. **Camada de Controle (Backend):** Recebe as requisições através das **Routes**, processa a lógica de negócio nos **Controllers** e interage com os **Models**.
-3. **Camada de Modelo (Dados):** Representa as entidades do sistema e realiza a comunicação com o banco de dados via scripts SQL.
-
-## 3. Fluxo de Dados
-O sistema utiliza o padrão **Client-Server**, onde o cliente (navegador) solicita recursos e o servidor (Flask) responde com os dados processados ou mensagens de confirmação.
