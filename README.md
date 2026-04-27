@@ -206,7 +206,7 @@ Descrever telas ja desenvolvidas
 
 ## Funcionalidades em Desenvolvimento
 - Rélatorios
-  Painel administrativo
+-Painel administrativo
   ---
 # 12. Evidências do Projeto
 
