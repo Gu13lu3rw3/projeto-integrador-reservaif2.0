@@ -186,7 +186,7 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 
 Descrever API, rotas ou regras implementadas.
 
-##Frontend
+## Frontend
 
 Descrever telas ja desenvolvidas
 - **Tela de Detalhe de Reserva:** informa o numero da sala, informa horario, informa data e o nome do professor que solicitou a reserva da sala, mostra o status da sala se ela está disponivel pra uso.
