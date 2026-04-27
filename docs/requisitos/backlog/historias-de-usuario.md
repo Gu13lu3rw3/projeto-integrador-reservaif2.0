@@ -32,6 +32,6 @@ Este documento consolida todas as 15 Histórias de Usuário (HUs) planejadas ao 
 ## Sprint 4: Experiência do Usuário (UX) e Relatórios
 *Foco: Transparência e detalhes.*
 
-- **HU16 - Detalhes da Reserva (Melhoria):** Como Professor/Coordenador, quero ver o histórico completo de uma reserva.
 - **HU09 - Notificações de Status:** Como Usuário, quero receber alertas de mudança de status.
 - **HU15 - Relatórios Estratégicos:** Como Administrador, quero gerar relatórios de uso.
+- **HU16 - Detalhes da Reserva (Melhoria):** Como Professor/Coordenador, quero ver o histórico completo de uma reserva.
