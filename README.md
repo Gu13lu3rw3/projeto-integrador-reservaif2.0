@@ -44,7 +44,7 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 | Gestão | Miro |
 -----------------------------
 
-# 6. Requisitos de sistemas
+# 6. Requisitos do Sistema
 
 # Atores 
 
@@ -111,7 +111,30 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 - **HU09:** Como **Usuário**, quero **receber alertas de mudança de status**, para ser informado assim que minha reserva for aprovada ou rejeitada.
 
 # 7. Modelagem do Sistema
+
+## Diagrama de Casos de Uso
+
+## Fluxo de Telas
+
+## Arquitetura
+
+## Modelo Entidade-Relacionamento
+![Modelo ER](docs/modelagem/modelo-er.png)
+
+
+
+## Diagrama de Classes
+
 # 8. Protótipos
+
+## Tela de Login
+![Login](docs/prototipos/login.png)
+
+## Dashboard
+![Dashboard](docs/prototipos/dashboard.png)
+
+## Cadastro
+![Cadastro](docs/prototipos/cadastro.png)
 
 # 9. Planejamento do Projeto
 
