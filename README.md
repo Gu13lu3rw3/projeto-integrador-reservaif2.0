@@ -207,7 +207,17 @@ Descrever telas ja desenvolvidas
 ## Funcionalidades em Desenvolvimento
 - Rélatorios
 -Painel administrativo
-  ---
+-Consulta de de Disponibilidade
+-Lista de Reparos
+-Notificação de Reparos
+-Notificação de status
+-Liberação automática
+-dashboard de gestão
+-Authenticação ( segurança )
+-Recuperação de Senha
+-Relatórios estratégicos
+-Detalhes de reserva ( melhoria )
+-Segurança ( parcial) 
 # 12. Evidências do Projeto
 
 # 13. Itens Ainda Não Produzidos
@@ -222,5 +232,3 @@ O repositório está sendo estruturado. A codificação iniciará após a valida
 **Previsão:** Sprint 3.
 
 # 14. Como Executar o Projeto
-
-# 15
