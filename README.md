@@ -212,19 +212,19 @@ Descrever telas ja desenvolvidas
 - Cadastro de salas
 
 ## Funcionalidades em Desenvolvimento
-- Rélatorios
+- Relatórios
 - Painel administrativo
-- Consulta de de Disponibilidade
-- Lista de Reparos
-- Notificação de Reparos
+- Consulta de disponibilidade
+- Lista de reparos
+- Notificação de reparos
 - Notificação de status
 - Liberação automática
-- dashboard de gestão
-- Authenticação ( segurança )
-- Recuperação de Senha
+- Dashboard de gestão
+- Autenticação (segurança)
+- Recuperação de senha
 - Relatórios estratégicos
-- Detalhes de reserva ( melhoria )
-- Segurança ( parcial)
+- Detalhes de reserva (melhoria)
+- Segurança (parcial)
 
 # 12. Evidências do Projeto
 Sessão de evidências reais da evolução do projeto.
