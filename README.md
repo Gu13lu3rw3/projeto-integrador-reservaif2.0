@@ -242,3 +242,5 @@ O repositório está sendo estruturado. A codificação iniciará após a valida
 **Previsão:** Sprint 3.
 
 # 14. Como Executar o Projeto
+
+Os códigos de execução ainda estão vazios porque o código principal ainda está em desenvolvimento e queremos garantir que tudo esteja em funcionamento completo. O prazo previsto é dia 26/05, para que haja tempo para que as demais coisas sejam feitas. Os responsáveis são todos da equipe, já que o código é conjunto.
