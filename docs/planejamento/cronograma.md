@@ -19,6 +19,6 @@
 | --- | --- | --- |
 | HU02 | Criação de Pedido de Reserva | Concluído |
 | HU08 | Cadastro de Salas | Concluído |
-| HU04 | (Protótipo): Aprovação/Rejeição | Concluído |
+| HU04 | (Protótipo): Aprovação/Rejeição  de pedido de reserva| Concluído |
 | HU04 | (Melhoria): Dashboard do coordenador | Concluído |
 | HU06 | Reporte de Problema | Concluído |
