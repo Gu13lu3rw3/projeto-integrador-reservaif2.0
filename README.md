@@ -191,11 +191,10 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 
 ## Backend
 
-Descrever API, rotas ou regras implementadas.
+Usamos o Flask como framework principal, estamos programando em Python e por enquanto, ainda estamos desenvolvendo os templates em HTML e CSS. As rotas atuais (routes) estão baseadas nas HUs já implementadas (HU02, HU04, HU06 e HU08). Mais detalhes na pasta backend.
 
 ## Frontend
 
-Descrever telas ja desenvolvidas
 - **Tela de Detalhe de Reserva:** informa o numero da sala, informa horario, informa data e o nome do professor que solicitou a reserva da sala, mostra o status da sala se ela está disponivel pra uso.
 
 - **Tela de Histórico de Status:** tem o registro de todas as alterções de status de reserva, o nome de quem cria a reserva ( professor ) e quem aprova a reserva ( coordenador ) com data e hora 
