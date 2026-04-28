@@ -166,9 +166,9 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 ![trello](docs/planejamento/Kanban2.png)
 
 ## Histórico de Entregas 
-- Entrega 1:documentação iniccial
-- Entrega 2:protótipos
-- Entrega 3:implementação parcial
+- Entrega 1: Documentação inicial
+- Entrega 2: Protótipos
+- Entrega 3: Implementação parcial
 ---
 
 # 10. Banco de Dados
