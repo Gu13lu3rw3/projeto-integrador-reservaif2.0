@@ -12,3 +12,12 @@
 | HU14 | Recuperação de senha | 16/05/2026 a 17/05/2026 |
 | HU15 | Relatórios Estratégicos | 17/05/2026 a 18/05/2026 |
 | HU16 | Detalhes de Reserva ( melhoria )| 19/05/2026 a 20/05/2026 |
+------
+| HU | Descrição | Observações |
+| --- | --- | --- |
+| HU02 | Criação de Pedido de Reserva | Concluído |
+| HU08 | Cadastro de Salas | 17 de nov de 2025 - 21 de nov de 2025 (Alta) |
+| HU04 | (Protótipo): Aprovação/Rejeição de Pedido de Reserva | Concluído |
+| HU04 | (Melhoria): Dashboard do coordenador | Concluído |
+| HU06 | Reporte de Problema | Concluído |
+| HU08 | Detalhes de Reserva | Concluído |
