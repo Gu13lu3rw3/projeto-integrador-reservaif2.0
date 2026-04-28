@@ -160,7 +160,8 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 | Sprint3 | Relatórios |
 
 ## Gestão das Tarefas 
-![trello](docs/planejamento/trello.png)
+![trello](docs/planejamento/Kanban1.png)
+![trello](docs/planejamento/Kanban2.png)
 
 ## Histórico de Entregas 
 - Entrega 1:documentação iniccial
