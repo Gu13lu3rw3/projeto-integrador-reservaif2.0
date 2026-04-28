@@ -22,4 +22,3 @@
 | HU04 | (Protótipo): Aprovação/Rejeição | Concluído |
 | HU04 | (Melhoria): Dashboard do coordenador | Concluído |
 | HU06 | Reporte de Problema | Concluído |
-| HU08 | Detalhes de Reserva | Concluído |
