@@ -233,11 +233,11 @@ Justificativa p/ausência: Sobre essa parte, como já dito nas outras seções f
 # 13. Itens Ainda Não Produzidos
 > Conforme solicitado pelo professor, justificamos a ausência dos itens técnicos abaixo:
 
-### Diagramas e Modelagem
+### Diagramas, Planejamento, Modelagem e Front-end
 Ainda não elaborados, pois a equipe focou na definição de escopo e visão do produto na Sprint 1.
 **Previsão:** Sprint 2.
 
-### Código Fonte
+### Código-Fonte, Apresentação, Assets e Src
 O repositório está sendo estruturado. A codificação iniciará após a validação dos protótipos.
 **Previsão:** Sprint 3.
 
