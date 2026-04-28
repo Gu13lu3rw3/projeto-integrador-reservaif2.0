@@ -227,9 +227,8 @@ Descrever telas ja desenvolvidas
 - Segurança (parcial)
 
 # 12. Evidências do Projeto
-Sessão de evidências reais da evolução do projeto.
 
-Sobre essa parte, como já dito nas outras seções faltando, o código ainda está em processo de revisão. Os testes ainda vão ser feitos para que possamos adicionar todas as evidências de que tudo está funcionando nos conformes. Então por enquanto, vamos deixar essa parte vazia até garantir que o código está 100% funcional. Já que essa parte da apresentação é o final, então o prazo previsto é o mais longo possível (01/06, com altas chances de alteração). Essa parte é responsabilidade de todos (Antônio Marcos, Cristian e Lana no desenvolvimento direto; Carlos Eduardo e Guilherme na revisão).
+Justificativa p/ausência: Sobre essa parte, como já dito nas outras seções faltando, o código ainda está em processo de revisão. Os testes ainda vão ser feitos para que possamos adicionar todas as evidências de que tudo está funcionando nos conformes. Então por enquanto, vamos deixar essa parte vazia até garantir que o código está 100% funcional. Já que essa parte da apresentação é o final, então o prazo previsto é o mais longo possível (01/06, com altas chances de alteração). Essa parte é responsabilidade de todos (Antônio Marcos, Cristian e Lana no desenvolvimento direto; Carlos Eduardo e Guilherme na revisão).
 
 # 13. Itens Ainda Não Produzidos
 > Conforme solicitado pelo professor, justificamos a ausência dos itens técnicos abaixo:
