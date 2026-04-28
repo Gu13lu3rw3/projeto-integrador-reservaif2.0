@@ -152,8 +152,8 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 | Sprints | Entregas |
 |---------|----------|
 | Sprint1 | Login + banco |
-| Sprint2 | Dashboard 
-| Sprint3 | Relatórioss |
+| Sprint2 | Dashboard |
+| Sprint3 | Relatórios |
 
 ## Gestão das Tarefas 
 ![trello](docs/planejamento/trello.png)
