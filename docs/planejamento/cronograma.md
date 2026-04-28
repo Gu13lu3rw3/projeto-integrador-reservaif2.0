@@ -1,3 +1,4 @@
+## Cronograma a fazer
 | HU | Descrição | Prazo |
 | --- | --- | --- |
 | HU01 | Consulta de Disponibilidade de Sala | 26/04/2026 a 28/04/2026 |
@@ -13,6 +14,7 @@
 | HU15 | Relatórios Estratégicos | 17/05/2026 a 18/05/2026 |
 | HU16 | Detalhes de Reserva ( melhoria )| 19/05/2026 a 20/05/2026 |
 ------
+## feitos e concluídos
 | HU | Descrição | Observações |
 | --- | --- | --- |
 | HU02 | Criação de Pedido de Reserva | Concluído |
