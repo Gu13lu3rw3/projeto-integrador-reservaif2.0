@@ -133,7 +133,11 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 ![Login](docs/prototipos/login.png)
 
 ## Dashboard
-![Dashboard](docs/prototipos/dashboard.png)
+![Dashboard](docs/prototipos/dashboard_professor.png)
+![Dashboard](docs/prototipos/dashboard_coordenador.png)
+![Dashboard](docs/prototipos/dashboard_manutencao.png)
+![Dashboard](docs/prototipos/problema_manutencao.png)
+![Dashboard](docs/prototipos/dashboard_administrador.png)
 
 ## Cadastro
 ![Cadastro](docs/prototipos/cadastro.png)
