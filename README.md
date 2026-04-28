@@ -127,7 +127,7 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 ## Diagrama de Classes
 ![Diagrama de Classes](docs/modelagem/diagrama-classes.png)
 
-Justificativa p/ ausência: Sobre essa parte de modelagem, apenas o Modelo Entidade-Relacionamento está preenchido por enquanto, já que nós ainda estamos procurando uma ferramente para fazer os desenhos da arquitetura, casos de uso e diagrama de classes (provavelmente usaremos o Figma). O prazo previsto é de até dia 05/05. O responsável por essa parte do trabalho é o Antônio Marcos.
+* Justificativa p/ ausência: Sobre essa parte de modelagem, apenas o Modelo Entidade-Relacionamento está preenchido por enquanto, já que nós ainda estamos procurando uma ferramente para fazer os desenhos da arquitetura, casos de uso e diagrama de classes (provavelmente usaremos o Figma). O prazo previsto é de até dia 05/05. O responsável por essa parte do trabalho é o Antônio Marcos.
 
 # 8. Protótipos
 
