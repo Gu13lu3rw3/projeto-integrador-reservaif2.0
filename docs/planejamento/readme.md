@@ -1,1 +1,1 @@
-Sessão de gestão do projeto, cronograma e acompanhamento.
+Sessão de gestão do projeto, cronograma e acompanhamento. Parte do planejamento ainda está em desenvolvimento pois estamos organizando as datas da maneira mais precisa possível (para não acumular tarefas demais em tão pouco tempo). O responsável pelo planejamento é o Carlos Eduardo.
