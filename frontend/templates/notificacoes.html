@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Notificações</title>
+</head>
+<body>
+    <h1>Minhas Notificações (HU09)</h1>
+    <ul>
+        {% for n in notificacoes %}
+        <li>{{ n.mensagem }}</li>
+        {% else %}
+        <li>Nenhuma notificação no momento.</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="/">Voltar</a>
+</body>
+</html>

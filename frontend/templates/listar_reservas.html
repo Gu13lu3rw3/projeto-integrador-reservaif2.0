@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservas</title>
+</head>
+<body>
+    <h1>Gestão de Reservas</h1>
+    <a href="/reservas/novo"><button>Nova Reserva (HU02)</button></a>
+    <a href="/reservas/liberar"><button>Liberação Automática (HU11)</button></a>
+    <hr>
+    <table border="1" width="100%">
+        <tr>
+            <th>ID</th>
+            <th>Data</th>
+            <th>Início</th>
+            <th>Fim (Automático)</th>
+            <th>Status (HU04)</th>
+            <th>Ações</th>
+        </tr>
+        {% for r in reservas %}
+        <tr>
+            <td>{{ r.id }}</td>
+            <td>{{ r.data }}</td>
+            <td>{{ r.hora_inicio }}</td>
+            <td>{{ r.hora_fim }}</td>
+            <td>{{ r.status }}</td>
+            <td>
+                <a href="/reservas/aprovar?id={{ r.id }}">Aprovar</a> | 
+                <a href="/reservas/rejeitar?id={{ r.id }}">Rejeitar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/">Voltar</a>
+</body>
+</html>

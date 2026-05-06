@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>ReservaIF - Salas</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>ReservaIF 2.0</h1>
+        <nav>
+            <a href="/salas">Salas</a> | 
+            <a href="/reservas">Reservas</a> | 
+            <a href="/problemas">Problemas</a> | 
+            <a href="/checklist">Checklist</a> | 
+            <a href="/notificacoes">Notificações</a>
+        </nav>
+    </header>
+    <hr>
+    <h2>Lista de Salas (HU08)</h2>
+    <a href="/salas/novo"><button>Cadastrar Nova Sala</button></a>
+    <table border="1" width="100%">
+        <tr>
+            <th>Nome</th>
+            <th>Capacidade</th>
+            <th>Localização</th>
+            <th>Status Manutenção</th>
+        </tr>
+        {% for sala in salas %}
+        <tr>
+            <td>{{ sala.nome }}</td>
+            <td>{{ sala.capacidade }}</td>
+            <td>{{ sala.localizacao }}</td>
+            <td>{{ sala.status_manutencao if sala.status_manutencao else 'Disponível' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

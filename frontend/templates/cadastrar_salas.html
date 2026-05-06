@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Sala</title>
+</head>
+<body>
+    <h2>Cadastrar Nova Sala</h2>
+    <form action="/salas/salvar" method="POST">
+        Nome: <input type="text" name="nome" required><br><br>
+        Capacidade: <input type="number" name="capacidade" required><br><br>
+        Localização: <input type="text" name="localizacao"><br><br>
+        <button type="submit">Salvar</button>
+    </form>
+    <br>
+    <a href="/salas">Voltar</a>
+</body>
+</html>

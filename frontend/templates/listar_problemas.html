@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Problemas</title>
+</head>
+<body>
+    <h1>Problemas Reportados</h1>
+    <a href="/problemas/novo"><button>Novo Reporte</button></a>
+    <hr>
+    <table border="1" width="100%">
+        <tr>
+            <th>ID</th>
+            <th>Sala ID</th>
+            <th>Descrição</th>
+            <th>Status</th>
+        </tr>
+        {% for p in problemas %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.id_sala }}</td>
+            <td>{{ p.descricao }}</td>
+            <td>{{ p.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/">Voltar</a>
+</body>
+</html>

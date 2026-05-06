@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Reportar Problema</title>
+</head>
+<body>
+    <h2>Reportar Problema Técnico (HU06)</h2>
+    <form action="/problemas/salvar" method="POST">
+        Sala: 
+        <select name="id_sala">
+            {% for s in salas %}
+            <option value="{{ s.id }}">{{ s.nome }}</option>
+            {% endfor %}
+        </select><br><br>
+        Descrição: <textarea name="descricao" required></textarea><br><br>
+        <button type="submit">Enviar Reporte</button>
+    </form>
+    <br>
+    <a href="/problemas">Ver Lista de Problemas</a>
+</body>
+</html>

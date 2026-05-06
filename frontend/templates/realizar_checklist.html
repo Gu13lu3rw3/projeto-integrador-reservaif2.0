@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Checklist Preventivo</title>
+</head>
+<body>
+    <h2>Realizar Checklist Preventivo (HU10)</h2>
+    <form action="/checklist/salvar" method="POST">
+        Sala: 
+        <select name="id_sala">
+            {% for s in salas %}
+            <option value="{{ s.id }}">{{ s.nome }}</option>
+            {% endfor %}
+        </select><br><br>
+        Estado de Limpeza: 
+        <select name="limpeza">
+            <option value="bom">Bom</option>
+            <option value="ruim">Ruim</option>
+        </select><br><br>
+        Funcionamento Equipamentos: 
+        <select name="equipamentos">
+            <option value="bom">Bom</option>
+            <option value="ruim">Ruim</option>
+        </select><br><br>
+        <p><i>Nota: Se algum item estiver 'Ruim', a sala será bloqueada automaticamente.</i></p>
+        <button type="submit">Finalizar Checklist</button>
+    </form>
+    <br>
+    <a href="/">Voltar</a>
+</body>
+</html>

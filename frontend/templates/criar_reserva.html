@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Reserva</title>
+</head>
+<body>
+    <h2>Solicitar Reserva (HU02)</h2>
+    <form action="/reservas/salvar" method="POST">
+        Sala: 
+        <select name="id_sala">
+            {% for s in salas %}
+            <option value="{{ s.id }}">{{ s.nome }}</option>
+            {% endfor %}
+        </select><br><br>
+        Data: <input type="date" name="data" required><br><br>
+        Hora Início: <input type="time" name="hora_inicio" required><br><br>
+        Duração (min): <input type="number" name="duracao" required><br><br>
+        Motivo: <textarea name="motivo"></textarea><br><br>
+        <button type="submit">Enviar Pedido</button>
+    </form>
+    <br>
+    <a href="/reservas">Voltar</a>
+</body>
+</html>
