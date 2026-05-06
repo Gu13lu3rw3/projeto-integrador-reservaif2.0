@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo - Responder Pergunta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div>
+        <div>
+            <h1>Jogo de Perguntas</h1>
+        </div>
+
+        <div>
+            <a href="/">Voltar ao Menu</a>
+        </div>
+
+        <div style="display: flex; gap: 40px; margin-top: 20px;">
+            <!-- Área da Pergunta -->
+            <div style="flex: 2; border: 1px solid #ccc; padding: 20px;">
+                <h2>{{ questao.pergunta }}</h2>
+                
+                <form action="/responder" method="POST">
+                    <input type="hidden" name="questao_id" value="{{ questao_id }}">
+                    
+                    <div style="margin-bottom: 10px;">
+                        <input type="radio" name="resposta" value="a" id="opt_a" required>
+                        <label for="opt_a">A) {{ questao.a }}</label>
+                    </div>
+                    
+                    <div style="margin-bottom: 10px;">
+                        <input type="radio" name="resposta" value="b" id="opt_b" required>
+                        <label for="opt_b">B) {{ questao.b }}</label>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <input type="radio" name="resposta" value="c" id="opt_c" required>
+                        <label for="opt_c">C) {{ questao.c }}</label>
+                    </div>
+                    
+                    <button type="submit">Enviar Resposta</button>
+                </form>
+            </div>
+
+            <!-- Painel do Jogador -->
+            <div style="flex: 1; border: 1px solid #ccc; padding: 20px;">
+                <h3>Status do Jogador</h3>
+                <ul>
+                    <li>Respondidas: {{ respondidas }}</li>
+                    <li>Acertos: {{ acertos }}</li>
+                    <li>Erros: {{ erros }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
