@@ -75,9 +75,9 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 | **HU06** | Reporte de Problemas Técnicos | Alta | ✅ Concluído |
 | **HU07** | Lista de Reparos para Manutenção | Média | Planejado |
 | **HU08** | Cadastro de Salas e Equipamentos | Alta | ✅ Concluído |
-| **HU09** | Notificações de Mudança de Status | Baixa | Planejado | Em andamento |
-| **HU10** | Checklist Preventivo de Sala | Média | Planejado | Em andamento |
-| **HU11** | Liberação Automática pós-uso | Crítica | Em andamento | 
+| **HU09** | Notificações de Mudança de Status | Baixa | Planejado |✅ Concluído  |
+| **HU10** | Checklist Preventivo de Sala | Média | Planejado | ✅ Concluído |
+| **HU11** | Liberação Automática pós-uso | Crítica | ✅ Concluído | 
 | **HU12** | Dashboard de Gestão (Indicadores) | Média | Planejado |
 | **HU13** | Autenticação e Perfis de Acesso | Alta | Planejado |
 | **HU14** | Recuperação de Senha | Baixa | Planejado |
