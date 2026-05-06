@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ "Editar" if questao else "Cadastrar" }} Questão</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div>
+        <div>
+            <h1>{{ "Editar" if questao else "Nova" }} Questão</h1>
+        </div>
+
+        <div>
+            <a href="/admin">Voltar para Listagem</a>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <form action="/admin/salvar" method="POST">
+                {% if questao %}
+                    <input type="hidden" name="id" value="{{ questao.id }}">
+                {% endif %}
+                
+                <div>
+                    <label>Pergunta:</label><br>
+                    <input type="text" name="pergunta" value="{{ questao.pergunta if questao else '' }}" required style="width: 300px;">
+                </div>
+                
+                <div style="margin-top: 10px;">
+                    <label>Alternativa A:</label><br>
+                    <input type="text" name="a" value="{{ questao.a if questao else '' }}" required>
+                </div>
+                
+                <div style="margin-top: 10px;">
+                    <label>Alternativa B:</label><br>
+                    <input type="text" name="b" value="{{ questao.b if questao else '' }}" required>
+                </div>
+                
+                <div style="margin-top: 10px;">
+                    <label>Alternativa C:</label><br>
+                    <input type="text" name="c" value="{{ questao.c if questao else '' }}" required>
+                </div>
+                
+                <div style="margin-top: 10px;">
+                    <label>Resposta Correta:</label><br>
+                    <select name="resposta" required>
+                        <option value="a" {{ 'selected' if questao and questao.resposta == 'a' else '' }}>A</option>
+                        <option value="b" {{ 'selected' if questao and questao.resposta == 'b' else '' }}>B</option>
+                        <option value="c" {{ 'selected' if questao and questao.resposta == 'c' else '' }}>C</option>
+                    </select>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <button type="submit">Salvar Questão</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
