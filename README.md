@@ -113,10 +113,11 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 # 7. Modelagem do Sistema
 
 ## Diagrama de Casos de Uso
-![Casos  de Uso(docs/modelagem/casos-de-uso.png)
+![Casos de Uso](docs/modelagem/casos-de-uso.png)
 
 ## Fluxo de Telas
-![Fluxo de Telas](docs/modelagem/fluxo-de-telas-png)
+![Fluxo de Telas](docs/modelagem/fluxo-de-telas1-png)
+![Fluxo de Telas](docs/modelagem/fluxo-de-telas2-png)
 
 ## Arquitetura
 ![Arquitetura](modelagem/arquitetura.png)
@@ -126,8 +127,6 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 
 ## Diagrama de Classes
 ![Diagrama de Classes](docs/modelagem/diagrama-classes.png)
-
-* Justificativa p/ ausência: Sobre essa parte de modelagem, apenas o Modelo Entidade-Relacionamento está preenchido por enquanto, já que nós ainda estamos procurando uma ferramente para fazer os desenhos da arquitetura, casos de uso e diagrama de classes (provavelmente usaremos o Figma). O prazo previsto é de até dia 05/05. O responsável por essa parte do trabalho é o Antônio Marcos.
 
 # 8. Protótipos
 
@@ -162,8 +161,8 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 | Sprint3 | Relatórios |
 
 ## Gestão das Tarefas 
-![trello](docs/planejamento/Kanban1.png)
-![trello](docs/planejamento/Kanban2.png)
+![trello](docs/planejamento/kanban1.png)
+![trello](docs/planejamento/kanban2.png)
 
 ## Histórico de Entregas 
 - Entrega 1: Documentação inicial
@@ -176,7 +175,7 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 
  Arquivos disponíveis:
  -'database/ddl.sql'
- -'database?dml.sql'
+ -'database/dml.sql'
  -'database/schema.sql'
  -'database/seeds.sql'
  
