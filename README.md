@@ -208,6 +208,9 @@ Usamos o Flask como framework principal, estamos programando em Python e por enq
 - Gestão de pedido
 - Reporte de problema
 - Cadastro de salas
+- Outras notificações
+- Checklist preventivo
+- Relatório de manutenção
 
 ## Funcionalidades em Desenvolvimento
 - Relatórios
