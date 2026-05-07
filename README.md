@@ -222,7 +222,6 @@ Usamos o Flask como framework principal, estamos programando em Python e por enq
 - Recuperação de senha
 - Relatórios estratégicos
 - Detalhes de reserva (melhoria)
-- Segurança (parcial)
 
 # 12. Evidências do Projeto
 
