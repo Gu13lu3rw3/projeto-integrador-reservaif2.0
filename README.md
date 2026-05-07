@@ -116,8 +116,8 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 ![Casos de Uso](docs/modelagem/casos-de-uso.png)
 
 ## Fluxo de Telas
-![Fluxo de Telas](docs/modelagem/fluxo-de-telas1-png)
-![Fluxo de Telas](docs/modelagem/fluxo-de-telas2-png)
+![Fluxo de Telas](docs/modelagem/fluxo-de-telas1.png)
+![Fluxo de Telas](docs/modelagem/fluxo-de-telas2.png)
 
 ## Arquitetura
 ![Arquitetura](modelagem/arquitetura.png)
