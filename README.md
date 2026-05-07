@@ -120,7 +120,7 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 ![Fluxo de Telas](docs/modelagem/fluxo-de-telas2.png)
 
 ## Arquitetura
-![Arquitetura](modelagem/arquitetura.png)
+![Arquitetura](docs/modelagem/arquitetura.png)
 
 ## Modelo Entidade-Relacionamento
 ![Modelo ER](docs/modelagem/modelo-er.png)
