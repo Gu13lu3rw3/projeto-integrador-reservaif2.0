@@ -189,18 +189,32 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 # 11. Implementação
 
 ## Backend
-
-Usamos o Flask como framework principal, estamos programando em Python e por enquanto, ainda estamos desenvolvendo os templates em HTML e CSS. As rotas atuais (routes) estão baseadas nas HUs já implementadas (HU02, HU04, HU06 e HU08). Mais detalhes na pasta backend.
+O backend foi desenvolvido em **Python com o framework Flask**, seguindo uma estrutura modular e organizada:
+- **Arquitetura:** Padrão MVC (Model-View-Controller) com roteamento manual e explícito via `add_url_rule`.
+- **Rotas:** Centralizadas no arquivo `routes/routes.py` para facilitar a manutenção e o controle de endpoints.
+- **Regras de Negócio:** Implementação de lógica para cálculo automático de término de reserva (HU02), bloqueio automático de salas via checklist (HU10) e sistema de notificações reativo (HU09).
 
 ## Frontend
+As interfaces foram construídas com **HTML5 e CSS3**, utilizando a identidade visual institucional (Branco e Verde):
+- **Dashboard Principal:** Central de navegação para todos os perfis de usuário.
+- **Módulo de Salas:** Interfaces para listagem e formulário de cadastro de novos recursos.
+- **Módulo de Reservas:** Tela de solicitação com campos dinâmicos e visualização de status.
+- **Módulo de Manutenção:** Telas para reporte de falhas técnicas e realização de checklists preventivos.
 
-- **Tela de Detalhe de Reserva:** informa o numero da sala, informa horario, informa data e o nome do professor que solicitou a reserva da sala, mostra o status da sala se ela está disponivel pra uso.
+## Funcionalidades Concluídas
+- **HU08 - Cadastro de Salas:** Inventário completo de recursos e equipamentos.
+- **HU02 - Solicitação de Reserva:** Fluxo de pedido com cálculo automático de horário.
+- **HU04 - Gestão de Pedidos:** Interface para aprovação e rejeição por parte da coordenação.
+- **HU06 - Reporte de Problemas:** Sistema de alerta para falhas técnicas nas salas.
+- **HU09 - Notificações:** Alertas automáticos de mudança de status para os usuários.
+- **HU10 - Checklist Preventivo:** Vistoria técnica com regra de bloqueio automático de salas.
+- **HU11 - Liberação Automática:** Funcionalidade de reset de status pós-uso.
 
-- **Tela de Histórico de Status:** tem o registro de todas as alterções de status de reserva, o nome de quem cria a reserva ( professor ) e quem aprova a reserva ( coordenador ) com data e hora 
+## Funcionalidades em Desenvolvimento
+- **Relatórios Estratégicos:** Geração de documentos em PDF/CSV sobre o uso das salas (HU15).
+- **Painel Administrativo Avançado:** Gestão de usuários, perfis de acesso e recuperação de senha (HU13/14).
+- **Dashboard de Gestão:** Gráficos de indicadores de desempenho e ocupação (HU12).
 
-- **Tela de Notificação:** na tela de notificação pode aparecer notificação de salas bloqueadas para a manutenção, reserva cancelada, reserva aprovada e reserva rejeitada todas com data e horario e caso a sala seja rejeitada vai aparecer o motivo da rejeieção na abaixo da notificação 
-
-- **Tela de Relatorio de Manutenção:** A tela de relatorio mostra o analise de problemas e o tempo medio de reparo tem um filtro para relatórios com opções de período, sala, equipamento, status e botões para gerar relatórios e limpar as opções que foram selecionadas, possui uma contagem de quantos problemas tem, o tempo médio e a taxa de resolução. Tem tambem um grafíco de tempo médio de reparo de cada equipamento como projetor, ar-condicionado, cadeiras e iluminação, também há um ranking detalhado sobre a quantidade de equipamentos, o percentual deles e o seu tmr 
 
 ## Funcionalidades Concluídas 
 
