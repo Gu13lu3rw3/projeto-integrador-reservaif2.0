@@ -126,7 +126,7 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 ![Modelo ER](docs/modelagem/modelo-er.png)
 
 ## Diagrama de Classes
-![Diagrama de Classes](docs/modelagem/diagrama-classes.png)
+![Diagrama de Classes](docs/modelagem/diagrama_classes.png)
 
 # 8. Protótipos
 
