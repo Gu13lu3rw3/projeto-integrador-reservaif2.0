@@ -13,7 +13,7 @@ Este documento consolida todas as 15 Histórias de Usuário (HUs) planejadas ao 
 - **HU04 - Gestão de Pedidos:** Como Coordenador, quero uma interface para aprovar ou rejeitar pedidos, para controlar o uso das salas.✅
 - **HU05 - Verificação de Conflito:** Como Professor, quero que o sistema bloqueie reservas em horários de aulas regulares (Horário Oficial).
 - **HU08 - Cadastro de Salas:** Como Administrador, quero cadastrar salas (nome, capacidade, localização e equipamentos associados), para que o sistema tenha um inventário completo e atualizado dos recursos.✅
-- **HU11 - Liberação Automática:** Como Sistema, quero liberar a sala automaticamente no minuto exato do término da reserva.
+- **HU11 - Liberação Automática:** Como Sistema, quero liberar a sala automaticamente no minuto exato do término da reserva.✅
 
 ---
 
@@ -22,7 +22,7 @@ Este documento consolida todas as 15 Histórias de Usuário (HUs) planejadas ao 
 
 - **HU06 - Reporte de Problemas:** Como Professor, quero reportar falhas (ex: projetor quebrado), para acionar a equipe de manutenção.✅
 - **HU07 - Lista de Reparos:** Como Manutenção, quero visualizar e filtrar problemas reportados, para agilizar os consertos.
-- **HU10 - Checklist Preventivo:** Como Manutenção, quero realizar checklists periódicos. Se um item falhar, a sala deve ser bloqueada automaticamente.
+- **HU10 - Checklist Preventivo:** Como Manutenção, quero realizar checklists periódicos. Se um item falhar, a sala deve ser bloqueada automaticamente.✅
 - **HU12 - Dashboard de Gestão:** Como Coordenador, quero visualizar indicadores como o Tempo Médio de Reparo (TMR) e Taxa de Ocupação.
 - **HU13 - Autenticação (Segurança):** Como Usuário, quero acessar o sistema via login e senha, com perfis de acesso diferenciados.
 - **HU14 - Recuperação de Senha:** Como Usuário, quero recuperar minha senha via e-mail caso a esqueça.
@@ -32,6 +32,6 @@ Este documento consolida todas as 15 Histórias de Usuário (HUs) planejadas ao 
 ## Sprint 4: Experiência do Usuário (UX) e Relatórios
 *Foco: Transparência e detalhes.*
 
-- **HU09 - Notificações de Status:** Como Usuário, quero receber alertas de mudança de status.
+- **HU09 - Notificações de Status:** Como Usuário, quero receber alertas de mudança de status.✅
 - **HU15 - Relatórios Estratégicos:** Como Administrador, quero gerar relatórios de uso.
 - **HU16 - Detalhes da Reserva (Melhoria):** Como Professor/Coordenador, quero ver o histórico completo de uma reserva.
