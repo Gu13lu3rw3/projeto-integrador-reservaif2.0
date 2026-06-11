@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - RESERVAIF 2.0</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .user-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .user-perfil {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .btn-logout {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-logout:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .welcome-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-card h2 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .welcome-card p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .user-session-info {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .user-session-info strong {
+            color: #333;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-card-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .menu-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .menu-card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .menu-card-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .menu-card-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-card-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .restricted {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .restricted-badge {
+            background: #ffc107;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>🏫 RESERVAIF 2.0</h1>
+        <div class="navbar-right">
+            <div class="user-info">
+                <div class="user-avatar">{{ usuario.nome[0] }}</div>
+                <div class="user-details">
+                    <div class="user-name">{{ usuario.nome }}</div>
+                    <div class="user-perfil">{{ usuario.perfil }}</div>
+                </div>
+            </div>
+            <a href="/logout" class="btn-logout">🚪 Sair</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="welcome-card">
+            <h2>👋 Bem-vindo, {{ usuario.nome }}!</h2>
+            <p>Você está autenticado no sistema RESERVAIF 2.0 com perfil de <strong>{{ usuario.perfil }}</strong>.</p>
+            <div class="user-session-info">
+                <strong>📧 Email:</strong> {{ usuario.email }}<br>
+                <strong>🆔 ID do Usuário:</strong> {{ usuario.id }}<br>
+                <strong>🕐 Login em:</strong> {{ usuario.login_timestamp }}
+            </div>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Salas (Todos) -->
+            <div class="menu-card">
+                <div class="menu-card-icon">🏛️</div>
+                <h3>Salas</h3>
+                <p>Visualize e gerencie as salas cadastradas</p>
+                <a href="/salas" style="text-decoration: none;">
+                    <button class="menu-card-btn">Acessar</button>
+                </a>
+            </div>
+
+            <!-- Reservas (Todos) -->
+            <div class="menu-card">
+                <div class="menu-card-icon">📅</div>
+                <h3>Reservas</h3>
+                <p>Gerencie suas reservas e pedidos</p>
+                <a href="/reservas" style="text-decoration: none;">
+                    <button class="menu-card-btn">Acessar</button>
+                </a>
+            </div>
+
+            <!-- Disponibilidade (HU01) -->
+            <div class="menu-card">
+                <div class="menu-card-icon">🔍</div>
+                <h3>Consultar Disponibilidade</h3>
+                <p>Verifique quais salas estão livres</p>
+                <a href="/disponibilidade" style="text-decoration: none;">
+                    <button class="menu-card-btn">Acessar</button>
+                </a>
+            </div>
+
+            <!-- Notificações (HU03) -->
+            <div class="menu-card">
+                <div class="menu-card-icon">🔔</div>
+                <h3>Notificações</h3>
+                <p>Acompanhe as notificações do sistema</p>
+                <a href="/notificacoes" style="text-decoration: none;">
+                    <button class="menu-card-btn">Acessar</button>
+                </a>
+            </div>
+
+            <!-- Problemas (HU06) -->
+            <div class="menu-card">
+                <div class="menu-card-icon">🔧</div>
+                <h3>Problemas</h3>
+                <p>Reporte e acompanhe problemas</p>
+                <a href="/problemas" style="text-decoration: none;">
+                    <button class="menu-card-btn">Acessar</button>
+                </a>
+            </div>
+
+            <!-- Checklist (HU10) -->
+            <div class="menu-card">
+                <div class="menu-card-icon">✅</div>
+                <h3>Checklist</h3>
+                <p>Realize checklists preventivos</p>
+                <a href="/checklist" style="text-decoration: none;">
+                    <button class="menu-card-btn">Acessar</button>
+                </a>
+            </div>
+
+            <!-- Cadastrar Salas (Admin) -->
+            <div class="menu-card {% if usuario.perfil != 'Administrador' %}restricted{% endif %}">
+                <div class="menu-card-icon">➕</div>
+                <h3>Cadastrar Salas</h3>
+                <p>Adicione novas salas ao sistema</p>
+                {% if usuario.perfil == 'Administrador' %}
+                <a href="/salas/novo" style="text-decoration: none;">
+                    <button class="menu-card-btn">Acessar</button>
+                </a>
+                {% else %}
+                <button class="menu-card-btn" disabled>Acesso Restrito</button>
+                <div class="restricted-badge">Apenas Admin</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
