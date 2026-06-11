@@ -203,6 +203,7 @@ As interfaces foram construídas com **HTML5 e CSS3**, utilizando a identidade v
 
 ## Funcionalidades Concluídas
 
+- **HU01 - Dispo:** Fluxo de pedido com cálculo automático de horário.
 - **HU02 - Solicitação de Reserva:** Fluxo de pedido com cálculo automático de horário.
 - **HU04 - Gestão de Pedidos:** Interface para aprovação e rejeição por parte da coordenação.
 - **HU06 - Reporte de Problemas:** Sistema de alerta para falhas técnicas nas salas.
