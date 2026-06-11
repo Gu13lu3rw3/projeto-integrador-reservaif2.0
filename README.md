@@ -67,22 +67,22 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 
 | ID | Funcionalidade | Prioridade | Status |
 |:---:|:---|:---:|:---:|
-| **HU01** | Consulta de Disponibilidade | Alta | Planejado |
+| **HU01** | Consulta de Disponibilidade | Alta | ✅ Concluído |
 | **HU02** | Criação de Reserva (Cálculo de Término) | Crítica | ✅ Concluído |
-| **HU03** | Notificação de Pedido (In-app/E-mail) | Crítica | Em breve |
+| **HU03** | Notificação de Pedido (In-app/E-mail) | Crítica | ✅ Concluído |
 | **HU04** | Gestão de Pedidos (Aprovação/Rejeição) | Crítica | ✅ Concluído |
-| **HU05** | Verificação de Conflito (Horário Oficial) | Crítica | Em breve |
+| **HU05** | Verificação de Conflito (Horário Oficial) | Crítica | ✅ Concluído |
 | **HU06** | Reporte de Problemas Técnicos | Alta | ✅ Concluído |
-| **HU07** | Lista de Reparos para Manutenção | Média | Planejado |
+| **HU07** | Lista de Reparos para Manutenção | Média | Em desenvolvimento |
 | **HU08** | Cadastro de Salas e Equipamentos | Alta | ✅ Concluído |
 | **HU09** | Notificações de Mudança de Status | Baixa | ✅ Concluído |
 | **HU10** | Checklist Preventivo de Sala | Média | ✅ Concluído |
 | **HU11** | Liberação Automática pós-uso | Critíco |✅ Concluído |
-| **HU12** | Dashboard de Gestão (Indicadores) | Média | Planejado |
-| **HU13** | Autenticação e Perfis de Acesso | Alta | Planejado |
-| **HU14** | Recuperação de Senha | Baixa | Planejado |
-| **HU15** | Relatórios Estratégicos de Uso | Baixa | Planejado |
-| **HU16** | Histórico Detalhado da Reserva | Baixa | Planejado |
+| **HU12** | Dashboard de Gestão (Indicadores) | Média | Em breve |
+| **HU13** | Autenticação e Perfis de Acesso | Alta | ✅ Concluído |
+| **HU14** | Recuperação de Senha | Baixa | Em desenvolvimento |
+| **HU15** | Relatórios Estratégicos de Uso | Baixa | Em desenvolvimento |
+| **HU16** | Histórico Detalhado da Reserva | Baixa | Em desenvolvimento |
 
 # Histórias de Usuário
 
