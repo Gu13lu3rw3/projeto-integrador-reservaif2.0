@@ -202,10 +202,11 @@ As interfaces foram construídas com **HTML5 e CSS3**, utilizando a identidade v
 - **Módulo de Manutenção:** Telas para reporte de falhas técnicas e realização de checklists preventivos.
 
 ## Funcionalidades Concluídas
-- **HU08 - Cadastro de Salas:** Inventário completo de recursos e equipamentos.
+
 - **HU02 - Solicitação de Reserva:** Fluxo de pedido com cálculo automático de horário.
 - **HU04 - Gestão de Pedidos:** Interface para aprovação e rejeição por parte da coordenação.
 - **HU06 - Reporte de Problemas:** Sistema de alerta para falhas técnicas nas salas.
+- **HU08 - Cadastro de Salas:** Inventário completo de recursos e equipamentos.
 - **HU09 - Notificações:** Alertas automáticos de mudança de status para os usuários.
 - **HU10 - Checklist Preventivo:** Vistoria técnica com regra de bloqueio automático de salas.
 - **HU11 - Liberação Automática:** Funcionalidade de reset de status pós-uso.
