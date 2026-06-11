@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Disponibilidade - RESERVAIF 2.0</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .filtro-info {
+            background-color: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            color: #555;
+            font-size: 14px;
+        }
+        .resultado-container {
+            margin-bottom: 30px;
+        }
+        .resultado-vazio {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 5px;
+            color: #856404;
+            text-align: center;
+            font-size: 16px;
+        }
+        .sala-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .sala-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+        .sala-nome {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .sala-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .info-item {
+            font-size: 14px;
+            color: #666;
+        }
+        .info-item strong {
+            color: #333;
+        }
+        .status-disponivel {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        button, a {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .btn-reservar {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-reservar:hover {
+            background-color: #218838;
+        }
+        .btn-voltar {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+        .btn-voltar:hover {
+            background-color: #d0d0d0;
+        }
+        .stats {
+            background-color: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #1565c0;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Resultado da Consulta de Disponibilidade</h1>
+        
+        <div class="filtro-info">
+            <strong>Filtros aplicados:</strong><br>
+            Data: <strong>{{ data }}</strong> | 
+            Período: <strong>{{ hora_inicio }} - {{ hora_fim }}</strong>
+        </div>
+
+        {% if salas %}
+            <div class="stats">
+                ✅ {{ salas|length }} sala(s) disponível(is) no período selecionado
+            </div>
+
+            <div class="resultado-container">
+                {% for sala in salas %}
+                <div class="sala-card">
+                    <div class="sala-nome">{{ sala.nome }}</div>
+                    <div class="sala-info">
+                        <div class="info-item">
+                            <strong>Capacidade:</strong> {{ sala.capacidade }} pessoas
+                        </div>
+                        <div class="info-item">
+                            <strong>Localização:</strong> {{ sala.localizacao }}
+                        </div>
+                    </div>
+                    <div class="status-disponivel">✅ DISPONÍVEL</div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="resultado-vazio">
+                ❌ Nenhuma sala disponível no período selecionado ({{ data }}, {{ hora_inicio }} - {{ hora_fim }})
+            </div>
+        {% endif %}
+
+        <div class="button-group">
+            <a href="/reservas/novo" class="btn-reservar">📝 Criar Reserva</a>
+            <a href="/disponibilidade" class="btn-voltar">🔍 Nova Consulta</a>
+        </div>
+    </div>
+</body>
+</html>
