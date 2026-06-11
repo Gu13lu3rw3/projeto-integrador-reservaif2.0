@@ -78,7 +78,7 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 | **HU09** | Notificações de Mudança de Status | Baixa | ✅ Concluído |
 | **HU10** | Checklist Preventivo de Sala | Média | ✅ Concluído |
 | **HU11** | Liberação Automática pós-uso | Critíco |✅ Concluído |
-| **HU12** | Dashboard de Gestão (Indicadores) | Média | Em breve |
+| **HU12** | Dashboard de Gestão (Indicadores) | Média | Em desenvolvimento |
 | **HU13** | Autenticação e Perfis de Acesso | Alta | ✅ Concluído |
 | **HU14** | Recuperação de Senha | Baixa | Em desenvolvimento |
 | **HU15** | Relatórios Estratégicos de Uso | Baixa | Em desenvolvimento |
