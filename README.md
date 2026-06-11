@@ -203,16 +203,16 @@ As interfaces foram construídas com **HTML5 e CSS3**, utilizando a identidade v
 
 ## Funcionalidades Concluídas
 
-- **HU01 - Consulta de Disponibilidade:** 
-- **HU02 - Solicitação de Reserva:**
+- **HU01 - Consulta de Disponibilidade** 
+- **HU02 - Solicitação de Reserva**
 - **HU03 - Notificação de Pedido**
-- **HU04 - Gestão de Pedidos:**
+- **HU04 - Gestão de Pedidos**
 - **HU05 - Verificação de Conflito**
-- **HU06 - Reporte de Problemas:** 
-- **HU08 - Cadastro de Salas:** 
-- **HU09 - Notificações:** 
-- **HU10 - Checklist Preventivo:** 
-- **HU11 - Liberação Automática:**
+- **HU06 - Reporte de Problemas** 
+- **HU08 - Cadastro de Salas** 
+- **HU09 - Notificações** 
+- **HU10 - Checklist Preventivo** 
+- **HU11 - Liberação Automática**
 - **HU13 - Autenticação e Perfis de Acesso**
 
 ## Funcionalidades em Desenvolvimento
