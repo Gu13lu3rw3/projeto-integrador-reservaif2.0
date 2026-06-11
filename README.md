@@ -150,7 +150,7 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 |-------|----------|
 | Levantamento | 25/04 a 26/04|
 | Protótipos | 26/04 a 26/05 |
-| Implementação | 25/05 a 26/05 |
+| Implementação | 25/05 a 26/06 |
 
 ## Sprints
 
