@@ -104,11 +104,11 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 - **HU10:** Como **Equipe de Manutenção**, quero **realizar checklists preventivos**, para garantir que as salas estejam em condições de uso antes das aulas.
 
 ## Segurança e Gestão
+- **HU09:** Como **Usuário**, quero **receber alertas de mudança de status**, para ser informado assim que minha reserva for aprovada ou rejeitada.
 - **HU12:** Como **Coordenador**, quero **visualizar um dashboard de indicadores**, para analisar a taxa de ocupação e o tempo médio de reparo das salas.
 - **HU13:** Como **Usuário**, quero **acessar o sistema via login e senha**, para garantir que apenas pessoas autorizadas realizem reservas.
 - **HU14:** Como **Usuário**, quero **recuperar minha senha via e-mail**, para que eu possa retomar o acesso caso a esqueça.
 - **HU15:** Como **Administrador**, quero **gerar relatórios estratégicos**, para auxiliar a diretoria na tomada de decisão sobre expansão de recursos.
-- **HU09:** Como **Usuário**, quero **receber alertas de mudança de status**, para ser informado assim que minha reserva for aprovada ou rejeitada.
 
 # 7. Modelagem do Sistema
 
@@ -216,34 +216,11 @@ As interfaces foram construídas com **HTML5 e CSS3**, utilizando a identidade v
 - **HU13 - Autenticação e Perfis de Acesso**
 
 ## Funcionalidades em Desenvolvimento
-- **Relatórios Estratégicos:** Geração de documentos em PDF/CSV sobre o uso das salas (HU15).
-- **Painel Administrativo Avançado:** Gestão de usuários, perfis de acesso e recuperação de senha (HU13/14).
+- **Lista de Reparos:** Visualização e filtragem de problemas reportados (HU07).
 - **Dashboard de Gestão:** Gráficos de indicadores de desempenho e ocupação (HU12).
-
-
-## Funcionalidades Concluídas 
-
-- Criação de pedido de reserva
-- Gestão de pedido
-- Reporte de problema
-- Cadastro de salas
-- Outras notificações
-- Checklist preventivo
-- Relatório de manutenção
-
-## Funcionalidades em Desenvolvimento
-- Relatórios
-- Painel administrativo
-- Consulta de disponibilidade
-- Lista de reparos
-- Notificação de reparos
-- Notificação de status
-- Liberação automática
-- Dashboard de gestão
-- Autenticação (segurança)
-- Recuperação de senha
-- Relatórios estratégicos
-- Detalhes de reserva (melhoria)
+- **Painel Administrativo Avançado:** Recuperação de senha (HU14).
+- **Relatórios Estratégicos:** Geração de documentos em PDF/CSV sobre o uso das salas (HU15).
+- **Detalhes da Resevra (Melhoria):** Visualização do história completo de uma reserva (HU16).
 
 # 12. Evidências do Projeto
 
@@ -253,7 +230,7 @@ Justificativa p/ausência: Sobre essa parte, como já dito nas outras seções f
 
 ### Código-Fonte, Evidências, Apresentação, Assets e Src
 O repositório está sendo estruturado. A codificação iniciará após a validação dos protótipos.
-**Previsão:** Sprint 3.
+**Previsão:** Sprint 4.
 
 # 14. Como Executar o Projeto
 Os códigos de execução ainda estão vazios porque o código principal ainda está em desenvolvimento e queremos garantir que tudo esteja em funcionamento completo. O prazo previsto é dia 26/06, para que haja tempo para que as demais coisas sejam feitas. Os responsáveis são todos da equipe, já que o código é conjunto.
