@@ -7,11 +7,11 @@ Este documento consolida todas as 15 Histórias de Usuário (HUs) planejadas ao 
 ## Sprints 1 e 2: Fluxo Essencial de Reserva
 *Foco: Reserva, Consulta e Aprovação.*
 
-- **HU01 - Consulta de Disponibilidade:** Como Professor, quero consultar a disponibilidade de salas em um período, para evitar conflitos antes de reservar.
+- **HU01 - Consulta de Disponibilidade:** Como Professor, quero consultar a disponibilidade de salas em um período, para evitar conflitos antes de reservar.✅
 - **HU02 - Criação de Reserva:** Como Professor, quero preencher um formulário com cálculo automático de término, para submeter pedidos de reserva.✅
-- **HU03 - Notificação de Pedido:** Como Coordenador, quero receber notificações imediatas (in-app/e-mail), para agir rapidamente sobre novos pedidos.
+- **HU03 - Notificação de Pedido:** Como Coordenador, quero receber notificações imediatas (in-app/e-mail), para agir rapidamente sobre novos pedidos.✅
 - **HU04 - Gestão de Pedidos:** Como Coordenador, quero uma interface para aprovar ou rejeitar pedidos, para controlar o uso das salas.✅
-- **HU05 - Verificação de Conflito:** Como Professor, quero que o sistema bloqueie reservas em horários de aulas regulares (Horário Oficial).
+- **HU05 - Verificação de Conflito:** Como Professor, quero que o sistema bloqueie reservas em horários de aulas regulares (Horário Oficial).✅
 - **HU08 - Cadastro de Salas:** Como Administrador, quero cadastrar salas (nome, capacidade, localização e equipamentos associados), para que o sistema tenha um inventário completo e atualizado dos recursos.✅
 - **HU11 - Liberação Automática:** Como Sistema, quero liberar a sala automaticamente no minuto exato do término da reserva.✅
 
@@ -24,7 +24,7 @@ Este documento consolida todas as 15 Histórias de Usuário (HUs) planejadas ao 
 - **HU07 - Lista de Reparos:** Como Manutenção, quero visualizar e filtrar problemas reportados, para agilizar os consertos.
 - **HU10 - Checklist Preventivo:** Como Manutenção, quero realizar checklists periódicos. Se um item falhar, a sala deve ser bloqueada automaticamente.✅
 - **HU12 - Dashboard de Gestão:** Como Coordenador, quero visualizar indicadores como o Tempo Médio de Reparo (TMR) e Taxa de Ocupação.
-- **HU13 - Autenticação (Segurança):** Como Usuário, quero acessar o sistema via login e senha, com perfis de acesso diferenciados.
+- **HU13 - Autenticação (Segurança):** Como Usuário, quero acessar o sistema via login e senha, com perfis de acesso diferenciados.✅
 - **HU14 - Recuperação de Senha:** Como Usuário, quero recuperar minha senha via e-mail caso a esqueça.
 
 ---
