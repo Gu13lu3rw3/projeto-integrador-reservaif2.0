@@ -158,7 +158,8 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 |---------|----------|
 | Sprint1 | Login + banco |
 | Sprint2 | Dashboard |
-| Sprint3 | Relatórios |
+| Sprint3 | Demais funcionalidades |
+| Sprint4 | Relatórios |
 
 ## Gestão das Tarefas 
 ![trello](docs/planejamento/kanban1.png)
