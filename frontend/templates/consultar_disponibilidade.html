@@ -3,59 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmação de Recuperação - RESERVAIF 2.0</title>
+    <title>Consultar Disponibilidade de Salas - RESERVAIF 2.0</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
-        .container { background: white; border-radius: 15px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); padding: 50px 40px; max-width: 500px; width: 100%; }
-        .header { text-align: center; margin-bottom: 40px; }
-        .header .icon { font-size: 60px; margin-bottom: 15px; }
-        .header h1 { color: #28a745; font-size: 28px; margin-bottom: 10px; }
-        .header p { color: #999; font-size: 14px; }
-        .info-box { background: #d4edda; border-left: 4px solid #28a745; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
-        .info-box h3 { color: #155724; margin-bottom: 10px; font-size: 16px; }
-        .info-box p { color: #155724; font-size: 14px; line-height: 1.6; }
-        .credentials { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 30px; border: 1px solid #e0e0e0; }
-        .credentials-row { display: flex; justify-content: space-between; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; }
-        .credentials-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-        .credentials-label { font-weight: 600; color: #555; font-size: 13px; }
-        .credentials-value { color: #333; font-family: 'Courier New', monospace; font-size: 14px; font-weight: 600; }
-        .btn { width: 100%; padding: 14px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: transform 0.2s; text-decoration: none; display: block; text-align: center; }
-        .btn:hover { transform: translateY(-2px); }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-buscar {
+            background-color: #667eea;
+            color: white;
+        }
+        .btn-buscar:hover {
+            background-color: #5568d3;
+        }
+        .btn-voltar {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+        .btn-voltar:hover {
+            background-color: #d0d0d0;
+        }
+        .info {
+            background-color: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <div class="icon">✅</div>
-            <h1>Recuperação Confirmada</h1>
-            <p>Suas credenciais foram recuperadas com sucesso</p>
+        <h1>🔍 Consultar Disponibilidade de Salas</h1>
+        
+        <div class="info">
+            <strong>HU01:</strong> Consulte a disponibilidade de salas em um período para evitar conflitos antes de reservar.
         </div>
-        <div class="info-box">
-            <h3>🔐 Dados de Acesso Recuperados</h3>
-            <p>Abaixo estão suas credenciais de acesso ao sistema RESERVAIF 2.0. Guarde-as em local seguro.</p>
-        </div>
-        {% if usuario %}
-        <div class="credentials">
-            <div class="credentials-row">
-                <span class="credentials-label">👤 Nome:</span>
-                <span class="credentials-value">{{ usuario.nome }}</span>
+
+        <form method="POST" action="/disponibilidade/filtrar">
+            <div class="form-group">
+                <label for="data">Data da Reserva *</label>
+                <input type="date" id="data" name="data" required>
             </div>
-            <div class="credentials-row">
-                <span class="credentials-label">📧 E-mail:</span>
-                <span class="credentials-value">{{ usuario.email }}</span>
+
+            <div class="form-group">
+                <label for="hora_inicio">Hora de Início *</label>
+                <input type="time" id="hora_inicio" name="hora_inicio" required>
             </div>
-            <div class="credentials-row">
-                <span class="credentials-label">🔑 Senha:</span>
-                <span class="credentials-value">{{ usuario.senha }}</span>
+
+            <div class="form-group">
+                <label for="hora_fim">Hora de Término *</label>
+                <input type="time" id="hora_fim" name="hora_fim" required>
             </div>
-            <div class="credentials-row">
-                <span class="credentials-label">👥 Perfil:</span>
-                <span class="credentials-value">{{ usuario.perfil }}</span>
+
+            <div class="form-group">
+                <label for="id_sala">Sala (Opcional - deixe em branco para ver todas)</label>
+                <select id="id_sala" name="id_sala">
+                    <option value="">-- Todas as Salas --</option>
+                    {% for sala in salas %}
+                    <option value="{{ sala.id }}">{{ sala.nome }} (Cap: {{ sala.capacidade }}) - {{ sala.localizacao }}</option>
+                    {% endfor %}
+                </select>
             </div>
-        </div>
-        {% endif %}
-        <a href="/login" class="btn">🔓 Voltar ao Login</a>
+
+            <div class="button-group">
+                <button type="submit" class="btn-buscar">🔎 Buscar Disponibilidade</button>
+                <button type="button" class="btn-voltar" onclick="window.location.href='/'">← Voltar</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>
