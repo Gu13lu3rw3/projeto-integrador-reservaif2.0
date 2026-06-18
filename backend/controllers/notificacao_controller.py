@@ -2,22 +2,17 @@ from flask import render_template, request, redirect, session
 from models.dados import notificacoes, usuarios, reservas
 from datetime import datetime
 from controllers.auth_controller import login_required
-
 @login_required
 def listar_notificacoes():
     usuario_id = session.get('usuario_id')
     perfil = session.get('usuario_perfil')
-    
     if perfil == 'Coordenador' or perfil == 'Administrador':
         notifs = notificacoes
     else:
         notifs = [n for n in notificacoes if n.get('id_usuario') == usuario_id]
-        
     return render_template('notificacoes.html', notificacoes=notifs)
-
 def criar_notificacao_pedido(id_reserva, id_professor, id_sala, motivo):
     coordenadores = [u for u in usuarios if u['perfil'] == 'Coordenador']
-
     for coord in coordenadores:
         notificacao = {
             "id": len(notificacoes) + 1,
@@ -31,7 +26,6 @@ def criar_notificacao_pedido(id_reserva, id_professor, id_sala, motivo):
             "meio_envio": "in-app"
         }
         notificacoes.append(notificacao)
-
 def criar_notificacao_status(id_professor, mensagem):
     notificacao = {
         "id": len(notificacoes) + 1,
@@ -43,7 +37,6 @@ def criar_notificacao_status(id_professor, mensagem):
         "meio_envio": "in-app"
     }
     notificacoes.append(notificacao)
-
 @login_required
 def marcar_como_lida():
     id_notificacao = int(request.args.get('id'))
@@ -51,7 +44,6 @@ def marcar_como_lida():
         if notif.get('id') == id_notificacao:
             notif['lida'] = True
     return redirect('/notificacoes')
-
 @login_required
 def deletar_notificacao():
     id_notificacao = int(request.args.get('id'))
