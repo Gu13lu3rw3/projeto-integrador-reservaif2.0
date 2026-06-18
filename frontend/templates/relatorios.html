@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios Estratégicos - RESERVAIF 2.0</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f7fa; min-height: 100vh; }
+        .navbar { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .navbar h1 { font-size: 22px; }
+        .navbar a { color: white; text-decoration: none; font-size: 14px; opacity: 0.9; margin-left: 20px; }
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+        .page-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 25px; }
+        .page-header-left h2 { color: #333; font-size: 26px; }
+        .page-header-left p { color: #777; font-size: 14px; margin-top: 5px; }
+        .btn { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.2s; }
+        .btn-success { background: #28a745; color: white; }
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .summary-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid; }
+        .summary-card.blue { border-color: #667eea; }
+        .summary-card.green { border-color: #28a745; }
+        .summary-card.red { border-color: #dc3545; }
+        .summary-card.yellow { border-color: #ffc107; }
+        .summary-card.teal { border-color: #17a2b8; }
+        .summary-card .value { font-size: 32px; font-weight: 700; color: #333; }
+        .summary-card .label { font-size: 12px; color: #777; margin-top: 5px; }
+        .table-card { background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); overflow: hidden; margin-bottom: 25px; }
+        .table-card-header { padding: 18px 20px; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; }
+        .table-card-header h3 { color: #333; font-size: 16px; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background: #f8f9fa; padding: 12px 15px; text-align: left; font-size: 13px; color: #555; font-weight: 600; border-bottom: 2px solid #eee; }
+        td { padding: 12px 15px; border-bottom: 1px solid #f0f0f0; font-size: 14px; color: #444; }
+        .badge { padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .badge-disponivel { background: #d4edda; color: #155724; }
+        .badge-bloqueada { background: #f8d7da; color: #721c24; }
+        .progress-bar { background: #f0f0f0; border-radius: 4px; height: 14px; overflow: hidden; min-width: 100px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #667eea, #764ba2); border-radius: 4px; }
+        .meta-info { background: #f8f9fa; padding: 12px 20px; font-size: 12px; color: #888; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>🏫 RESERVAIF 2.0</h1>
+        <div>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/dashboard/indicadores">Indicadores</a>
+            <a href="/logout">Sair</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="page-header">
+            <div class="page-header-left">
+                <h2>📄 Relatórios Estratégicos</h2>
+                <p>Dados de uso das salas para apoio à tomada de decisão da diretoria.</p>
+            </div>
+            <a href="/relatorios/exportar" class="btn btn-success">⬇️ Exportar CSV</a>
+        </div>
+        <div class="summary-grid">
+            <div class="summary-card blue">
+                <div class="value">{{ total_reservas }}</div>
+                <div class="label">Total de Reservas</div>
+            </div>
+            <div class="summary-card green">
+                <div class="value">{{ total_aprovadas }}</div>
+                <div class="label">Reservas Aprovadas</div>
+            </div>
+            <div class="summary-card red">
+                <div class="value">{{ total_rejeitadas }}</div>
+                <div class="label">Reservas Rejeitadas</div>
+            </div>
+            <div class="summary-card yellow">
+                <div class="value">{{ total_problemas }}</div>
+                <div class="label">Problemas Reportados</div>
+            </div>
+            <div class="summary-card teal">
+                <div class="value">{{ total_resolvidos }}</div>
+                <div class="label">Problemas Resolvidos</div>
+            </div>
+        </div>
+        <div class="table-card">
+            <div class="table-card-header">
+                <h3>🏛️ Uso por Sala</h3>
+            </div>
+            {% if uso_por_sala %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sala</th>
+                        <th>Localização</th>
+                        <th>Capacidade</th>
+                        <th>Total Reservas</th>
+                        <th>Aprovadas</th>
+                        <th>Rejeitadas</th>
+                        <th>Problemas</th>
+                        <th>Ocupação</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% set max_total = uso_por_sala | map(attribute='total_reservas') | list | max if uso_por_sala else 1 %}
+                    {% for item in uso_por_sala %}
+                    <tr>
+                        <td><strong>{{ item.nome }}</strong></td>
+                        <td>{{ item.localizacao }}</td>
+                        <td>{{ item.capacidade }}</td>
+                        <td>{{ item.total_reservas }}</td>
+                        <td style="color:#28a745; font-weight:600;">{{ item.aprovadas }}</td>
+                        <td style="color:#dc3545; font-weight:600;">{{ item.rejeitadas }}</td>
+                        <td>{{ item.problemas }}</td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: {{ (item.total_reservas / (max_total if max_total > 0 else 1) * 100) | int }}%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            {% if item.status == 'Bloqueada (Manutenção)' %}
+                            <span class="badge badge-bloqueada">Bloqueada</span>
+                            {% else %}
+                            <span class="badge badge-disponivel">Disponível</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div style="padding: 40px; text-align: center; color: #999;">Nenhum dado disponível ainda.</div>
+            {% endif %}
+            <div class="meta-info">Relatório gerado em: {{ data_geracao }}</div>
+        </div>
+    </div>
+</body>
+</html>
