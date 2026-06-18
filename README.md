@@ -73,16 +73,16 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 | **HU04** | Gestão de Pedidos (Aprovação/Rejeição) | Crítica | ✅ Concluído |
 | **HU05** | Verificação de Conflito (Horário Oficial) | Crítica | ✅ Concluído |
 | **HU06** | Reporte de Problemas Técnicos | Alta | ✅ Concluído |
-| **HU07** | Lista de Reparos para Manutenção | Média | Em desenvolvimento |
+| **HU07** | Lista de Reparos para Manutenção | Média | ✅ Concluído |
 | **HU08** | Cadastro de Salas e Equipamentos | Alta | ✅ Concluído |
 | **HU09** | Notificações de Mudança de Status | Baixa | ✅ Concluído |
 | **HU10** | Checklist Preventivo de Sala | Média | ✅ Concluído |
 | **HU11** | Liberação Automática pós-uso | Critíco |✅ Concluído |
-| **HU12** | Dashboard de Gestão (Indicadores) | Média | Em desenvolvimento |
+| **HU12** | Dashboard de Gestão (Indicadores) | Média | ✅ Concluído |
 | **HU13** | Autenticação e Perfis de Acesso | Alta | ✅ Concluído |
-| **HU14** | Recuperação de Senha | Baixa | Em desenvolvimento |
-| **HU15** | Relatórios Estratégicos de Uso | Baixa | Em desenvolvimento |
-| **HU16** | Histórico Detalhado da Reserva | Baixa | Em desenvolvimento |
+| **HU14** | Recuperação de Senha | Baixa | ✅ Concluído |
+| **HU15** | Relatórios Estratégicos de Uso | Baixa | ✅ Concluído |
+| **HU16** | Histórico Detalhado da Reserva | Baixa | ✅ Concluído |
 
 # Histórias de Usuário
 
