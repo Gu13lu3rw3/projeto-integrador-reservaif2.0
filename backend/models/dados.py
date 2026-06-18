@@ -1,27 +1,65 @@
+
+from datetime import datetime
+class Sala:
+    def __init__(self, id, nome, capacidade, localizacao, recursos, status="Disponível"):
+        self.id = id
+        self.nome = nome
+        self.capacidade = capacidade
+        self.localizacao = localizacao
+        self.recursos = recursos
+        self.status = status
+class Reserva:
+    def __init__(self, id, id_sala, id_professor, data, hora_inicio, hora_fim, motivo, status="Pendente"):
+        self.id = id
+        self.id_sala = id_sala
+        self.id_professor = id_professor
+        self.data = data
+        self.hora_inicio = hora_inicio
+        self.hora_fim = hora_fim
+        self.motivo = motivo
+        self.status = status
+        self.aprovado_por = None
+        self.justificativa_rejeicao = None
+        self.data_criacao = datetime.now().strftime("%d/%m/%Y %H:%M")
+        self.data_atualizacao = self.data_criacao
+        self.historico = [{"evento": "Reserva solicitada", "data_hora": self.data_criacao}]
+class Usuario:
+    def __init__(self, id, nome, email, senha, perfil):
+        self.id = id
+        self.nome = nome
+        self.email = email
+        self.senha = senha
+        self.perfil = perfil
+class Problema:
+    def __init__(self, id, id_sala, descricao, prioridade, status="Pendente", reportado_por=None):
+        self.id = id
+        self.id_sala = id_sala
+        self.descricao = descricao
+        self.prioridade = prioridade
+        self.status = status
+        self.reportado_por = reportado_por
+        self.data_reporte = datetime.now().strftime("%d/%m/%Y %H:%M")
+        self.data_resolucao = None
+        self.resolvido_por = None
+class Notificacao:
+    def __init__(self, id, id_usuario, mensagem, lida=False):
+        self.id = id
+        self.id_usuario = id_usuario
+        self.mensagem = mensagem
+        self.lida = lida
+        self.data = datetime.now().strftime("%d/%m/%Y %H:%M")
 salas = [
-    {"id": 1, "nome": "Sala B3-10", "capacidade": 30, "localizacao": "Bloco B"},
-    {"id": 2, "nome": "Laboratório C2-13", "capacidade": 20, "localizacao": "Bloco C"}
+    Sala(1, "Laboratório de Informática 1", 30, "Bloco A - Piso 1", ["30 computadores", "Projetor", "Ar-condicionado"]),
+    Sala(2, "Auditório Central", 150, "Bloco C - Térreo", ["Sistema de som", "Projetor", "Palco"]),
+    Sala(3, "Sala de Aula 102", 40, "Bloco B - Piso 2", ["Quadro branco", "Ar-condicionado"])
 ]
-
-horarios_oficiais = [
-    {"id": 1, "id_sala": 1, "dia_semana": "Segunda", "hora_inicio": "08:00", "hora_fim": "10:00", "descricao": "Aula Regular"},
-    {"id": 2, "id_sala": 1, "dia_semana": "Segunda", "hora_inicio": "10:00", "hora_fim": "12:00", "descricao": "Aula Regular"},
-    {"id": 3, "id_sala": 1, "dia_semana": "Quarta", "hora_inicio": "14:00", "hora_fim": "16:00", "descricao": "Aula Regular"},
-    {"id": 4, "id_sala": 2, "dia_semana": "Terça", "hora_inicio": "09:00", "hora_fim": "11:00", "descricao": "Aula Prática"},
-    {"id": 5, "id_sala": 2, "dia_semana": "Quinta", "hora_inicio": "13:00", "hora_fim": "15:00", "descricao": "Aula Prática"}
-]
-
 usuarios = [
-    {"id": 1, "nome": "Prof. João", "email": "joao@email.com", "senha": "123456", "perfil": "Professor"},
-    {"id": 2, "nome": "Coord. Maria", "email": "maria@email.com", "senha": "123456", "perfil": "Coordenador"},
-    {"id": 3, "nome": "Admin Silva", "email": "silva@email.com", "senha": "123456", "perfil": "Administrador"},
-    {"id": 4, "nome": "Manut. Carlos", "email": "carlos@email.com", "senha": "123456", "perfil": "Manutencao"}
+    Usuario(1, "João Professor", "joao@email.com", "123456", "Professor"),
+    Usuario(2, "Maria Coordenadora", "maria@email.com", "123456", "Coordenador"),
+    Usuario(3, "Silva Administrador", "silva@email.com", "123456", "Administrador"),
+    Usuario(4, "Carlos Manutenção", "carlos@email.com", "123456", "Manutenção")
 ]
-
 reservas = []
-
 problemas = []
-
-checklists = []
-
 notificacoes = []
+checklists = []
