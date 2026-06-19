@@ -114,11 +114,11 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 # 7. Modelagem do Sistema
 
 ## Diagrama de Casos de Uso
-![Casos de Uso](docs/modelagem/casos-de-uso.png)
+![Casos de Uso](docs/modelagem/casos_de_uso.png)
 
 ## Fluxo de Telas
-![Fluxo de Telas](docs/modelagem/fluxo-de-telas1.png)
-![Fluxo de Telas](docs/modelagem/fluxo-de-telas2.png)
+![Fluxo de Telas](docs/modelagem/fluxo_de_telas.png)
+
 
 ## Arquitetura
 ![Arquitetura](docs/modelagem/arquitetura.png)
