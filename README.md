@@ -238,17 +238,39 @@ Todas as funcionalidades foram implementadas e testadas. As evidências de funci
 Para executar o projeto localmente, siga os passos abaixo:
 
 ## Pré-requisitos
-- Python 3.x
-- MySQL
-- `pip` (gerenciador de pacotes Python)
+- **Python 3.x** instalado.
+- **MySQL** instalado e em execução.
+- **pip** (gerenciador de pacotes do Python).
 
 ## Configuração do Banco de Dados
 1. Certifique-se de ter um servidor MySQL em execução.
 2. Crie um banco de dados chamado `reservaif`.
 3. Importe o esquema do banco de dados e os dados iniciais:
-   ```bash
-   mysql -u seu_usuario -p reservaif < database/schema.sql
-   mysql -u seu_usuario -p reservaif < database/seeds.sql
+```bash
+mysql -u seu_usuario -p reservaif < database/schema.sql
+mysql -u seu_usuario -p reservaif < database/seeds.sql
+```
 
+## Configuração do Ambiente Python
+1. Navegue até a pasta `backend` do projeto:
+```bash
 cd backend
+```
+2. Instale as dependências necessárias:
+```bash
+pip install -r requirements.txt
+```
 
+## Execução da Aplicação
+1. Ainda dentro da pasta `backend`, inicie o servidor:
+```bash
+python app.py
+```
+2. O sistema estará disponível no seu navegador no endereço: [http://127.0.0.1:5000](http://127.0.0.1:5000 )
+
+---
+
+# 14. Próximos Passos
+- **Testes de Estresse:** Validar o comportamento do sistema com múltiplas reservas simultâneas.
+- **Documentação de API:** Criar uma documentação detalhada dos endpoints.
+- **Refinamento de UI:** Ajustar detalhes visuais finais.
