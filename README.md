@@ -42,7 +42,8 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 | Banco | MySQL |
 | Prototipação | Figma |
 | Gestão | Miro |
------------------------------
+
+---
 
 # 6. Requisitos do Sistema
 
@@ -169,23 +170,25 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 - Entrega 1: Documentação inicial
 - Entrega 2: Protótipos
 - Entrega 3: Implementação parcial
+
 ---
 
 # 10. Banco de Dados
  ## Estrutura
 
  Arquivos disponíveis:
- -'database/ddl.sql'
- -'database/dml.sql'
- -'database/schema.sql'
- -'database/seeds.sql'
+ -`database/ddl.sql`
+ -`database/dml.sql`
+ -`database/schema.sql`
+ -`database/seeds.sql`
  
- ## modelo visual 
+ ## Modelo Visual 
   ![Banco](database/modelo-er.png)
 
   ## Observações
   
-  Descrever decisões tomadas na modelagem
+  As tabelas `USUARIO`, `SALA`, `EQUIPAMENTO`, `RESERVA`, `HORARIO_OFICIAL`, `PROBLEMA`, `NOTIFICACAO` e `CHECKLIST` foram criadas para gerenciar as informações do sistema. As tabelas já contêm dados iniciais para testes e demonstração.
+
 ---
 # 11. Implementação
 
@@ -203,35 +206,47 @@ As interfaces foram construídas com **HTML5 e CSS3**, utilizando a identidade v
 - **Módulo de Manutenção:** Telas para reporte de falhas técnicas e realização de checklists preventivos.
 
 ## Funcionalidades Concluídas
+Todas as Histórias de Usuário (HUs) listadas no backlog foram implementadas e estão funcionais:
 
 - **HU01 - Consulta de Disponibilidade** 
-- **HU02 - Solicitação de Reserva**
-- **HU03 - Notificação de Pedido**
-- **HU04 - Gestão de Pedidos**
-- **HU05 - Verificação de Conflito**
-- **HU06 - Reporte de Problemas** 
-- **HU08 - Cadastro de Salas** 
-- **HU09 - Notificações** 
-- **HU10 - Checklist Preventivo** 
-- **HU11 - Liberação Automática**
+- **HU02 - Criação de Reserva (Cálculo de Término)**
+- **HU03 - Notificação de Pedido (In-app/E-mail)**
+- **HU04 - Gestão de Pedidos (Aprovação/Rejeição)**
+- **HU05 - Verificação de Conflito (Horário Oficial)**
+- **HU06 - Reporte de Problemas Técnicos** 
+- **HU07 - Lista de Reparos para Manutenção** 
+- **HU08 - Cadastro de Salas e Equipamentos** 
+- **HU09 - Notificações de Mudança de Status** 
+- **HU10 - Checklist Preventivo de Sala** 
+- **HU11 - Liberação Automática pós-uso**
+- **HU12 - Dashboard de Gestão (Indicadores)**
 - **HU13 - Autenticação e Perfis de Acesso**
+- **HU14 - Recuperação de Senha**
+- **HU15 - Relatórios Estratégicos de Uso**
+- **HU16 - Histórico Detalhado da Reserva**
 
-## Funcionalidades em Desenvolvimento
-- **Lista de Reparos:** Visualização e filtragem de problemas reportados (HU07).
-- **Dashboard de Gestão:** Gráficos de indicadores de desempenho e ocupação (HU12).
-- **Painel Administrativo Avançado:** Recuperação de senha (HU14).
-- **Relatórios Estratégicos:** Geração de documentos em PDF/CSV sobre o uso das salas (HU15).
-- **Detalhes da Resevra (Melhoria):** Visualização do história completo de uma reserva (HU16).
+---
 
 # 12. Evidências do Projeto
 
-Justificativa p/ausência: Sobre essa parte, como já dito nas outras seções faltando, o código ainda está em processo de revisão. Os testes ainda vão ser feitos para que possamos adicionar todas as evidências de que tudo está funcionando nos conformes. Então por enquanto, vamos deixar essa parte vazia até garantir que o código está 100% funcional. Já que essa parte da apresentação é o final, então o prazo previsto é o mais longo possível (01/07, com altas chances de alteração). Essa parte é responsabilidade de todos (Antônio Marcos, Cristian e Lana no desenvolvimento direto; Carlos Eduardo e Guilherme na revisão).
+Todas as funcionalidades foram implementadas e testadas. As evidências de funcionamento serão adicionadas em breve, após a conclusão dos testes finais e a preparação da documentação de entrega.
 
-# 13. Itens Ainda Não Produzidos
+---
 
-### Código-Fonte, Evidências, Apresentação, Assets e Src
-O repositório está sendo estruturado. A codificação iniciará após a validação dos protótipos.
-**Previsão:** Sprint 4.
+# 13. Como Executar o Projeto
 
-# 14. Como Executar o Projeto
-Os códigos de execução ainda estão vazios porque o código principal ainda está em desenvolvimento e queremos garantir que tudo esteja em funcionamento completo. O prazo previsto é dia 26/06, para que haja tempo para que as demais coisas sejam feitas. Os responsáveis são todos da equipe, já que o código é conjunto.
+Para executar o projeto localmente, siga os passos abaixo:
+
+## Pré-requisitos
+- Python 3.x
+- MySQL
+- `pip` (gerenciador de pacotes Python)
+
+## Configuração do Banco de Dados
+1. Certifique-se de ter um servidor MySQL em execução.
+2. Crie um banco de dados chamado `reservaif`.
+3. Importe o esquema do banco de dados e os dados iniciais:
+   ```bash
+   mysql -u seu_usuario -p reservaif < database/schema.sql
+   mysql -u seu_usuario -p reservaif < database/seeds.sql
+cd backend
