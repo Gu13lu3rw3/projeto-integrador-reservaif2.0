@@ -249,4 +249,6 @@ Para executar o projeto localmente, siga os passos abaixo:
    ```bash
    mysql -u seu_usuario -p reservaif < database/schema.sql
    mysql -u seu_usuario -p reservaif < database/seeds.sql
+
 cd backend
+
