@@ -1,26 +1,57 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Criar Reserva</title>
-</head>
-<body>
-    <h2>Solicitar Reserva (HU02)</h2>
-    <form action="/reservas/salvar" method="POST">
-        Sala: 
-        <select name="id_sala">
-            {% for s in salas %}
-            <option value="{{ s.id }}">{{ s.nome }}</option>
-            {% endfor %}
-        </select><br><br>
-        Data: <input type="date" name="data" required><br><br>
-        Hora Início: <input type="time" name="hora_inicio" required><br><br>
-        Duração (min): <input type="number" name="duracao" required><br><br>
-        Motivo: <textarea name="motivo"></textarea><br><br>
-        <button type="submit">Enviar Pedido</button>
-    </form>
-    <br>
-    <a href="/reservas">Voltar</a>
-</body>
-</html>
+{% extends "base.html" %}
 
+{% block title %}Solicitar Reserva - ReservaIF{% endblock %}
+
+{% block content %}
+<div class="section-header">
+    <h2>Solicitar Nova Reserva</h2>
+    <a href="/reservas" class="btn btn-outline">
+        <i class="fas fa-arrow-left"></i> Voltar
+    </a>
+</div>
+
+<div class="card" style="max-width: 600px; margin: 0 auto;">
+    <form action="/reservas/salvar" method="POST">
+        <div class="form-group">
+            <label for="id_sala">Sala Desejada</label>
+            <select name="id_sala" id="id_sala" required>
+                {% for s in salas %}
+                <option value="{{ s.id }}">{{ s.nome }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group">
+                <label for="data">Data</label>
+                <input type="date" name="data" id="data" required>
+            </div>
+            <div class="form-group">
+                <label for="hora_inicio">Horário de Início</label>
+                <input type="time" name="hora_inicio" id="hora_inicio" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="duracao">Duração Prevista (minutos)</label>
+            <select name="duracao" id="duracao" required>
+                <option value="50">50 minutos (1 aula)</option>
+                <option value="100">100 minutos (2 aulas)</option>
+                <option value="150">150 minutos (3 aulas)</option>
+                <option value="200">200 minutos (4 aulas)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="motivo">Finalidade / Disciplina</label>
+            <textarea name="motivo" id="motivo" rows="3" placeholder="Ex: Aula Prática de Programação"></textarea>
+        </div>
+
+        <div style="margin-top: 32px;">
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                Enviar Solicitação de Reserva
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}
