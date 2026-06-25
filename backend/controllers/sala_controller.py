@@ -1,27 +1,20 @@
-from flask import render_template, request, redirect
-from models.dados import salas
-from controllers.auth_controller import login_required, roles_required
-@login_required
+from flask import render_template, request, redirect, url_for
+from models import dados
+
+
 def listar_salas():
+    salas = dados.listar_todas_salas()
     return render_template('listar_salas.html', salas=salas)
-@login_required
-@roles_required('Administrador')
-def form_cadastrar_sala():
+
+
+def form_sala():
     return render_template('cadastrar_salas.html')
-@login_required
-@roles_required('Administrador')
+
+
 def salvar_sala():
     nome = request.form.get('nome')
     capacidade = request.form.get('capacidade')
     localizacao = request.form.get('localizacao')
-    equipamentos = request.form.get('equipamentos')
     if nome and capacidade:
-        nova_sala = {
-            "id": len(salas) + 1,
-            "nome": nome, 
-            "capacidade": capacidade,
-            "localizacao": localizacao,
-            "equipamentos": equipamentos if equipamentos else "Nenhum"
-        }
-        salas.append(nova_sala)
-    return redirect('/salas')
+        dados.inserir_sala(nome, capacidade, localizacao)
+    return redirect(url_for('listar_salas'))
