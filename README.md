@@ -254,10 +254,10 @@ Todas as Histórias de Usuário (HUs) listadas no backlog foram implementadas e 
 ![Sistema](docs/apresentacao/sistema-rodando.png)
 
 ## Tela Login Real
-![Login Real](docs/apresentacao/login-funcionando.png)
+![Login Real](docs/apresentacao/login-funcionando.jpeg)
 
 ## Dashboard Implementado
-![Dashboard Real](docs/apresentacao/dashboard-real.png)
+![Dashboard Real](docs/apresentacao/dashboard-real.jpeg)
 
 ## Banco Funcionando
 ![Banco](docs/apresentacao/banco-funcionando.png)
