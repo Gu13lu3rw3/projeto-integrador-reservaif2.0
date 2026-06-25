@@ -178,17 +178,34 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
  ## Estrutura
 
  Arquivos disponíveis:
- -`database/ddl.sql`
- -`database/dml.sql`
- -`database/schema.sql`
- -`database/seeds.sql`
- 
+  database/ddl.sql: Contém as instruções Data Definition Language (DDL), responsáveis pela criação da estrutura do banco de dados, incluindo tabelas, colunas, tipos de dados, chaves primárias, chaves estrangeiras e índices. Este arquivo define o esqueleto do banco de dados.
+  
+  database/dml.sql: Contém as instruções Data Manipulation Language (DML), utilizadas para a manipulação dos dados, como inserção, atualização e exclusão de registros nas tabelas. É usado para popular ou modificar dados existentes.
+  
+  database/schema.sql: Este arquivo integra as definições DDL e, opcionalmente, algumas instruções DML iniciais. Ele permite recriar o esquema completo do banco de dados a partir do zero, garantindo que a estrutura e os dados essenciais estejam prontos para uso. No contexto deste     projeto, o schema.sql fornecido (pasted_content.txt) inclui tanto a criação das tabelas quanto a inserção de dados iniciais.
+
+  database/seeds.sql: Contém dados de semeadura (seed data), que são registros iniciais e de exemplo utilizados para testes e demonstrações do sistema. Estes dados permitem que o ambiente seja rapidamente configurado com informações básicas para validação das funcionalidades.
+
+  database/modelo-er.png: Uma representação visual do Modelo Entidade-Relacionamento (MER) do banco de dados. Este diagrama ilustra as entidades (tabelas), seus atributos (colunas) e os relacionamentos entre elas, facilitando a compreensão da arquitetura de dados do sistema.
+
  ## Modelo Visual 
   ![Banco](database/modelo-er.png)
 
   ## Observações
   
-  As tabelas `USUARIO`, `SALA`, `EQUIPAMENTO`, `RESERVA`, `HORARIO_OFICIAL`, `PROBLEMA`, `NOTIFICACAO` e `CHECKLIST` foram criadas para gerenciar as informações do sistema. As tabelas já contêm dados iniciais para testes e demonstração.
+Centralização de Usuários (USUARIO): A tabela USUARIO centraliza todos os perfis de acesso (Administrador, Coordenador, Professor, Manutenção) com um campo perfil_acesso. Isso simplifica a gestão de autenticação (HU13) e permite que um único usuário possa ter diferentes papéis no sistema, facilitando a atribuição de responsabilidades (e.g., id_professor e id_coordenador_aprovacao na tabela RESERVA). O email é definido como UNIQUE para garantir a unicidade de cada usuário no sistema.
+
+Gestão Detalhada de Salas e Equipamentos (SALA, EQUIPAMENTO): As tabelas SALA e EQUIPAMENTO permitem um controle dos recursos físicos. A SALA inclui capacidade, localizacao e status_manutencao, que é crucial para bloquear salas (HU10). EQUIPAMENTO é associado a SALA via chave estrangeira, permitindo o reporte de problemas específicos de equipamentos (HU06) e a manutenção do inventário (HU08).
+
+Processo de Reserva Abrangente (RESERVA): A tabela RESERVA é o princípio do sistema, capturando todos os detalhes de uma solicitação. Inclui campos para data, hora_inicio, duracao_minutos e hora_fim (calculado), motivo, status_reserva (para controle do fluxo de aprovação/rejeição - HU04), justificativa_rejeicao e id_coordenador_aprovacao. Isso permite um registro completo do ciclo de vida da reserva, incluindo a auditoria de aprovações e rejeições (HU16).
+
+Horários Oficiais (HORARIO_OFICIAL): A tabela HORARIO_OFICIAL foi criada para registrar os horários de aulas regulares por sala e dia da semana. Esta tabela é essencial para a verificação de conflitos (HU05), garantindo que as reservas não se sobreponham a atividades acadêmicas que já tenham sido definidas.
+
+Rastreamento de Problemas (PROBLEMA): A tabela PROBLEMA permite que professores reportem falhas (HU06), registrando id_sala, id_equipamento (opcional), id_professor_reporte, descricao, data_reporte, status_problema e historico_status (JSON para rastrear mudanças de estado). Isso facilita a gestão e resolução de incidentes pela equipe de manutenção (HU07).
+
+Notificações Dinâmicas (NOTIFICACAO): A tabela NOTIFICACAO armazena mensagens para usuários específicos (id_usuario), com tipo_notificacao, mensagem, data_hora, lida e meio_envio. Isso suporta o sistema de notificações (HU03, HU09), mantendo os usuários informados sobre o status de suas reservas e problemas reportados.
+
+Checklists de Manutenção (CHECKLIST): A tabela CHECKLIST foi projetada para a equipe de manutenção realizar verificações preventivas (HU10). Registra id_sala, id_manutencao_responsavel, data_realizacao, status_checklist, itens_verificados (JSON para detalhes dos itens), e taxa_falha. A taxa de falha pode ser usada para acionar bloqueios automáticos de salas, conforme a regra de negócio.
 
 ---
 # 11. Implementação
