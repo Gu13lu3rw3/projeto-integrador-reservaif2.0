@@ -46,5 +46,3 @@
 | 25/06 | **Entrega Final** | Consolidação do código, API Thunder Client e documentação. | **Final** | ✅ |
 
 ---
-
-> **Nota:** Todas as Histórias de Usuário foram validadas e integradas ao sistema principal, garantindo a conformidade com os requisitos do Projeto Integrador.
