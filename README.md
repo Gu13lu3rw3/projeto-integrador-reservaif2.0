@@ -218,7 +218,7 @@ O backend foi desenvolvido em **Python com o framework Flask**, seguindo uma est
 - **Regras de Negócio:** Implementação de lógica para cálculo automático de término de reserva (HU02), bloqueio automático de salas via checklist (HU10) e sistema de notificações reativo (HU09).
 
 ## Frontend
-As interfaces foram construídas com **HTML5 e CSS3**, utilizando a identidade visual institucional (Branco e Verde):
+As interfaces foram construídas com **HTML e CSS**, utilizando a identidade visual institucional (branco, verde e vermelho):
 - **Dashboard Principal:** Central de navegação para todos os perfis de usuário.
 - **Módulo de Salas:** Interfaces para listagem e formulário de cadastro de novos recursos.
 - **Módulo de Reservas:** Tela de solicitação com campos dinâmicos e visualização de status.
