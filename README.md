@@ -177,7 +177,8 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 # 10. Banco de Dados
  ## Estrutura
 
- Arquivos disponíveis:
+Arquivos disponíveis:
+
 **database/ddl.sql:** Contém as instruções Data Definition Language (DDL), responsáveis pela criação da estrutura do banco de dados, incluindo tabelas, colunas, tipos de dados, chaves primárias, chaves estrangeiras e índices. Este arquivo define o esqueleto do banco de dados.
 
 **database/dml.sql:** Contém as instruções Data Manipulation Language (DML), utilizadas para a manipulação dos dados, como inserção, atualização e exclusão de registros nas tabelas. É usado para popular ou modificar dados existentes.
