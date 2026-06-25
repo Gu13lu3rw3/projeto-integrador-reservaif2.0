@@ -167,9 +167,10 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 ![trello](docs/planejamento/kanban2.png)
 
 ## Histórico de Entregas 
-- Entrega 1: Documentação inicial
-- Entrega 2: Protótipos
-- Entrega 3: Implementação parcial
+- Entrega 1: Documentação inicial do README, brainstorm de todas as ideias para o projeto e protótipos parciais de telas.
+- Entrega 2: Continuação do código parcial e aprimoramento das HUs existentes.
+- Entrega 3: Implementação parcial (cerca de 60% do escopo total do código) e revisão de erros na documentação.
+- Entrega 4: Implementação final (código completo) e última revisão de erros no projeto todo.
 
 ---
 
