@@ -1,30 +1,57 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Problemas</title>
-</head>
-<body>
-    <h1>Problemas Reportados</h1>
-    <a href="/problemas/novo"><button>Novo Reporte</button></a>
-    <hr>
-    <table border="1" width="100%">
-        <tr>
-            <th>ID</th>
-            <th>Sala ID</th>
-            <th>Descrição</th>
-            <th>Status</th>
-        </tr>
-        {% for p in problemas %}
-        <tr>
-            <td>{{ p.id }}</td>
-            <td>{{ p.id_sala }}</td>
-            <td>{{ p.descricao }}</td>
-            <td>{{ p.status }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-    <br>
-    <a href="/">Voltar</a>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Manutenção - ReservaIF{% endblock %}
+
+{% block content %}
+<div class="section-header">
+    <h2>Manutenção e Reparos</h2>
+    <a href="/problemas/novo" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Reportar Novo Problema
+    </a>
+</div>
+
+<div class="card">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Sala</th>
+                    <th>Descrição</th>
+                    <th>Reportado em</th>
+                    <th>Status</th>
+                    <th style="text-align: right;">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in problemas %}
+                <tr>
+                    <td>#{{ p.id }}</td>
+                    <td><strong>Sala {{ p.id_sala }}</strong></td>
+                    <td>{{ p.descricao[:50] }}{{ '...' if p.descricao|length > 50 }}</td>
+                    <td>{{ p.data_reporte }}</td>
+                    <td>
+                        <span class="badge badge-{{ 'pendente' if p.status == 'Pendente' else 'aprovada' }}">
+                            {{ p.status }}
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        {% if p.status == 'Pendente' and session['usuario']['perfil'] in ['Manutenção', 'Admin', 'Administrador'] %}
+                        <a href="/problemas/atualizar?id={{ p.id }}&status=Resolvido" class="btn btn-outline" style="padding: 6px 12px; font-size: 12px; color: var(--if-green);">
+                            <i class="fas fa-check"></i> Resolver
+                        </a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="6" style="text-align: center; color: var(--text-gray); padding: 40px;">
+                        Nenhum problema técnico registrado.
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
