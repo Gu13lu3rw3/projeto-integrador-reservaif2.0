@@ -39,7 +39,7 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 |:---:|:---|
 | Front-end | HTML, CSS |
 | Back-end | Flask, Python |
-| Banco | MySQL |
+| Banco | MySQL Workbench |
 | Prototipação | Figma |
 | Gestão | Miro |
 
