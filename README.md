@@ -179,10 +179,10 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
 
  Arquivos disponíveis:
 **database/ddl.sql:** Contém as instruções Data Definition Language (DDL), responsáveis pela criação da estrutura do banco de dados, incluindo tabelas, colunas, tipos de dados, chaves primárias, chaves estrangeiras e índices. Este arquivo define o esqueleto do banco de dados.
-  
+
 **database/dml.sql:** Contém as instruções Data Manipulation Language (DML), utilizadas para a manipulação dos dados, como inserção, atualização e exclusão de registros nas tabelas. É usado para popular ou modificar dados existentes.
-  
-**database/schema.sql:** Este arquivo integra as definições DDL e, opcionalmente, algumas instruções DML iniciais. Ele permite recriar o esquema completo do banco de dados a partir do zero, garantindo que a estrutura e os dados essenciais estejam prontos para uso. No contexto deste     projeto, o schema.sql fornecido (pasted_content.txt) inclui tanto a criação das tabelas quanto a inserção de dados iniciais.
+
+**database/schema.sql:** Este arquivo integra as definições DDL e, opcionalmente, algumas instruções DML iniciais. Ele permite recriar o esquema completo do banco de dados a partir do zero, garantindo que a estrutura e os dados essenciais estejam prontos para uso. No contexto deste projeto, o schema.sql fornecido (pasted_content.txt) inclui tanto a criação das tabelas quanto a inserção de dados iniciais.
 
 **database/seeds.sql:** Contém dados de semeadura (seed data), que são registros iniciais e de exemplo utilizados para testes e demonstrações do sistema. Estes dados permitem que o ambiente seja rapidamente configurado com informações básicas para validação das funcionalidades.
 
