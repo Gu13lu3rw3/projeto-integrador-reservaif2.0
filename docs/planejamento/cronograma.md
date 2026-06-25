@@ -1,4 +1,4 @@
-## Cronograma em desenvolvimento
+## Cronograma concluído ✅
 | HU | Descrição | Prazo |
 | --- | --- | --- |
 | HU01 | Consulta de Disponibilidade de Sala | 26/04/2026 a 28/04/2026 |
