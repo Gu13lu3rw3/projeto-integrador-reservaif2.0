@@ -1,19 +1,37 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Notificações</title>
-</head>
-<body>
-    <h1>Minhas Notificações (HU09)</h1>
-    <ul>
-        {% for n in notificacoes %}
-        <li>{{ n.mensagem }}</li>
-        {% else %}
-        <li>Nenhuma notificação no momento.</li>
-        {% endfor %}
-    </ul>
-    <br>
-    <a href="/">Voltar</a>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Notificações - ReservaIF{% endblock %}
+
+{% block content %}
+<div class="section-header">
+    <h2>Minhas Notificações</h2>
+</div>
+
+<div class="card" style="padding: 0;">
+    {% for n in notificacoes %}
+    <div class="notification-item">
+        <div class="notification-content">
+            <p style="font-weight: 500; margin-bottom: 4px;">{{ n.mensagem }}</p>
+            <span class="notification-date">
+                <i class="far fa-calendar-alt"></i> {{ n.data }}
+            </span>
+        </div>
+        <div style="display: flex; gap: 8px;">
+            {% if not n.lida %}
+            <a href="/notificacoes/marcar_lida?id={{ n.id }}" class="btn btn-outline" style="padding: 6px 12px; font-size: 12px; color: var(--if-green);">
+                <i class="fas fa-check"></i> Marcar como lida
+            </a>
+            {% endif %}
+            <a href="/notificacoes/deletar?id={{ n.id }}" class="btn btn-outline" style="padding: 6px 12px; font-size: 12px; color: var(--if-red);">
+                <i class="fas fa-trash"></i> Excluir
+            </a>
+        </div>
+    </div>
+    {% else %}
+    <div style="text-align: center; color: var(--text-gray); padding: 60px;">
+        <i class="fas fa-bell-slash fa-3x" style="margin-bottom: 16px; opacity: 0.3;"></i>
+        <p>Nenhuma notificação no momento.</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
