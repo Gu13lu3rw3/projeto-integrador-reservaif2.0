@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ReservaIF{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modern_style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo-container" style="flex-direction: column; align-items: flex-start; padding: 10px 0;">
+                <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="ReservaIF Logo" style="width: 140px; height: auto; border-radius: 8px;">
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="/dashboard" class="nav-link {% if request.path == '/dashboard' %}active{% endif %}">
+                            <i class="fas fa-chart-pie mr-2"></i>&nbsp; Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/salas" class="nav-link {% if request.path == '/salas' %}active{% endif %}">
+                            <i class="fas fa-door-open mr-2"></i>&nbsp; Salas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/reservas" class="nav-link {% if request.path == '/reservas' %}active{% endif %}">
+                            <i class="fas fa-calendar-alt mr-2"></i>&nbsp; Reservas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/disponibilidade" class="nav-link {% if request.path == '/disponibilidade' %}active{% endif %}">
+                            <i class="fas fa-search mr-2"></i>&nbsp; Disponibilidade
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/problemas" class="nav-link {% if request.path == '/problemas' %}active{% endif %}">
+                            <i class="fas fa-tools mr-2"></i>&nbsp; Manutenção
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/notificacoes" class="nav-link {% if request.path == '/notificacoes' %}active{% endif %}">
+                            <i class="fas fa-bell mr-2"></i>&nbsp; Notificações
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/dashboard/indicadores" class="nav-link {% if request.path == '/dashboard/indicadores' %}active{% endif %}">
+                            <i class="fas fa-chart-line mr-2"></i>&nbsp; Indicadores
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div style="margin-top: auto;">
+                <div class="card" style="padding: 12px; margin-bottom: 12px; background: var(--bg-gray); border: none;">
+                    <div style="font-size: 12px; color: var(--text-gray);">Logado como:</div>
+                    <div style="font-weight: 600; font-size: 14px;">{{ session['usuario']['nome'] }}</div>
+                    <div style="font-size: 11px; color: var(--if-green);">{{ session['usuario']['perfil'] }}</div>
+                </div>
+                <a href="/logout" class="nav-link" style="color: var(--if-red);">
+                    <i class="fas fa-sign-out-alt mr-2"></i>&nbsp; Sair
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>
