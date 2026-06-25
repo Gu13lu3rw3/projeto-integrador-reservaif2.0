@@ -192,7 +192,7 @@ Arquivos disponíveis:
  ## Modelo Visual 
   ![Banco](database/modelo-er.png)
 
-  ## Observações
+ ## Observações
   
 **Centralização de Usuários (USUARIO):** A tabela USUARIO centraliza todos os perfis de acesso (Administrador, Coordenador, Professor, Manutenção) com um campo perfil_acesso. Isso simplifica a gestão de autenticação (HU13) e permite que um único usuário possa ter diferentes papéis no sistema, facilitando a atribuição de responsabilidades (e.g., id_professor e id_coordenador_aprovacao na tabela RESERVA). O email é definido como UNIQUE para garantir a unicidade de cada usuário no sistema.
 
@@ -211,18 +211,20 @@ Arquivos disponíveis:
 ---
 # 11. Implementação
 
-## Backend
-O backend foi desenvolvido em **Python com o framework Flask**, seguindo uma estrutura modular e organizada:
-- **Arquitetura:** Padrão MVC (Model-View-Controller) com roteamento manual e explícito via `add_url_rule`.
-- **Rotas:** Centralizadas no arquivo `routes/routes.py` para facilitar a manutenção e o controle de endpoints.
-- **Regras de Negócio:** Implementação de lógica para cálculo automático de término de reserva (HU02), bloqueio automático de salas via checklist (HU10) e sistema de notificações reativo (HU09).
+## 11. Implementação
 
-## Frontend
-As interfaces foram construídas com **HTML e CSS**, utilizando a identidade visual institucional (branco, verde e vermelho):
-- **Dashboard Principal:** Central de navegação para todos os perfis de usuário.
-- **Módulo de Salas:** Interfaces para listagem e formulário de cadastro de novos recursos.
-- **Módulo de Reservas:** Tela de solicitação com campos dinâmicos e visualização de status.
-- **Módulo de Manutenção:** Telas para reporte de falhas técnicas e realização de checklists preventivos.
+O ReservaIF 2.0 utiliza uma arquitetura modular que separa a lógica de negócio da interface, garantindo um sistema escalável e de fácil manutenção.
+
+### Backend
+Desenvolvido em **Python com Flask**, o backend segue uma estrutura organizada em controladores e modelos:
+- **Controladores (`controllers/`)**: Processam as requisições e gerenciam módulos como Reservas, Manutenção e Autenticação.
+- **Modelos (`models/dados.py`)**: Encapsulam a lógica de acesso ao MySQL e definem as classes de domínio (`Sala`, `Reserva`, etc.).
+- **Regras de Negócio**: Implementação de cálculos automáticos de término, verificação de conflitos de horário, bloqueio automático de salas por gravidade de problema e sistema de notificações in-app.
+
+### Frontend
+A interface foi construída com **HTML5, CSS3 e Jinja2**:
+- **Template Base (`base.html`)**: Centraliza o layout, sidebar e navegação, garantindo consistência visual em todos os módulos.
+- **Responsividade**: Estilização focada na identidade institucional, proporcionando uma experiência intuitiva para professores e coordenadores.
 
 ## Funcionalidades Concluídas
 Todas as Histórias de Usuário (HUs) listadas no backlog foram implementadas e estão funcionais:
