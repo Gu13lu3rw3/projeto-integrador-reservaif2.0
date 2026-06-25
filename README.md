@@ -9,7 +9,7 @@
 - **Carlos Eduardo Fernandes** (Scrum Master)
 - **Antônio Marcos Pires** (Desenvolvedor)
 - **Christian Souza** (Desenvolvedor)
-- **Lana Marina** (Desenvolvedora)
+- **Allana Marina** (Desenvolvedora)
 
 ## Disciplina
 Projeto Integrador
