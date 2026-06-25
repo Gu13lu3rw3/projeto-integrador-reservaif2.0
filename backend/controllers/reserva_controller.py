@@ -1,168 +1,90 @@
-from flask import render_template, request, redirect, session
-from models.dados import reservas, salas, notificacoes, horarios_oficiais, usuarios
-from controllers.notificacao_controller import criar_notificacao_pedido, criar_notificacao_status
-from controllers.auth_controller import login_required, roles_required
+from flask import render_template, request, redirect, url_for, session
+from models import dados
 from datetime import datetime, timedelta
-@login_required
+
+
 def listar_reservas():
+    reservas = dados.listar_todas_reservas()
+    salas = dados.listar_todas_salas()
+    salas_dict = {s.id: s.nome for s in salas}
+    for r in reservas:
+        r.nome_sala = salas_dict.get(r.id_sala, f"Sala {r.id_sala}")
     return render_template('listar_reservas.html', reservas=reservas, salas=salas)
-@login_required
-@roles_required('Professor')
-def form_criar_reserva():
+
+
+def form_reserva():
+    salas = dados.listar_todas_salas()
     return render_template('criar_reserva.html', salas=salas)
-@login_required
-@roles_required('Professor')
+
+
 def salvar_reserva():
-    id_sala = request.form.get('id_sala')
+    id_sala = int(request.form.get('id_sala'))
     data = request.form.get('data')
-    hora_inicio = request.form.get('hora_inicio')
-    duracao = request.form.get('duracao')
+    hora_inicio_str = request.form.get('hora_inicio')
+    duracao_minutos = int(request.form.get('duracao', 60))
     motivo = request.form.get('motivo')
-    id_professor = session.get('usuario_id')
-    if id_sala and data and hora_inicio and duracao:
-        inicio = datetime.strptime(hora_inicio, "%H:%M")
-        fim = inicio + timedelta(minutes=int(duracao))
-        hora_fim = fim.strftime("%H:%M")
-        if verifica_conflito_horario_oficial(id_sala, data, hora_inicio, hora_fim):
-            return redirect('/reservas?erro=conflito_horario')
-        nova_reserva = {
-            "id": len(reservas) + 1,
-            "id_sala": id_sala,
-            "id_professor": id_professor,
-            "data": data,
-            "hora_inicio": hora_inicio,
-            "hora_fim": hora_fim,
-            "motivo": motivo,
-            "status": "Pendente",
-            "aprovado_por": None,
-            "justificativa_rejeicao": None,
-            "data_criacao": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "data_atualizacao": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "historico": [
-                {
-                    "evento": "Reserva criada",
-                    "data_hora": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                    "usuario_id": id_professor
-                }
-            ]
-        }
-        reservas.append(nova_reserva)
-        criar_notificacao_pedido(nova_reserva['id'], id_professor, id_sala, motivo)
-    return redirect('/reservas')
-@login_required
-@roles_required('Coordenador')
+    
+    formato = "%H:%M"
+    try:
+        inicio_dt = datetime.strptime(hora_inicio_str, formato)
+        fim_dt = inicio_dt + timedelta(minutes=duracao_minutos)
+        hora_fim_str = fim_dt.strftime(formato)
+    except Exception:
+        hora_fim_str = hora_inicio_str 
+
+    id_reserva = dados.inserir_reserva(id_sala, session['usuario']['id'], data, hora_inicio_str, duracao_minutos, hora_fim_str, motivo)
+    
+    dados.inserir_notificacao(1, 'Novo Pedido de Reserva', f"Um novo pedido de reserva foi feito para a sala {id_sala} em {data}.")
+    dados.inserir_notificacao(2, 'Novo Pedido de Reserva', f"Um novo pedido de reserva foi feito para a sala {id_sala} em {data}.")
+    
+    return redirect(url_for('listar_reservas'))
+
+
 def aprovar_reserva():
-    id_reserva = int(request.args.get('id'))
-    id_coordenador = session.get('usuario_id')
-    for r in reservas:
-        if r['id'] == id_reserva:
-            r['status'] = "Aprovada"
-            r['aprovado_por'] = id_coordenador
-            r['data_atualizacao'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            r.setdefault('historico', []).append({
-                "evento": "Reserva aprovada",
-                "data_hora": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "usuario_id": id_coordenador
-            })
-            criar_notificacao_status(r['id_professor'], f"Sua reserva #{id_reserva} foi APROVADA.")
-    return redirect('/reservas')
-@login_required
-@roles_required('Coordenador')
-def rejeitar_reserva():
-    id_reserva = int(request.args.get('id'))
-    justificativa = request.args.get('justificativa', 'Sem justificativa informada.')
-    id_coordenador = session.get('usuario_id')
-    for r in reservas:
-        if r['id'] == id_reserva:
-            r['status'] = "Rejeitada"
-            r['aprovado_por'] = id_coordenador
-            r['justificativa_rejeicao'] = justificativa
-            r['data_atualizacao'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            r.setdefault('historico', []).append({
-                "evento": f"Reserva rejeitada. Justificativa: {justificativa}",
-                "data_hora": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "usuario_id": id_coordenador
-            })
-            criar_notificacao_status(r['id_professor'], f"Sua reserva #{id_reserva} foi REJEITADA. Motivo: {justificativa}")
-    return redirect('/reservas')
-@login_required
-def liberar_sala_automatica():
-    agora = datetime.now()
-    data_atual = agora.strftime("%Y-%m-%d")
-    hora_atual = agora.strftime("%H:%M")
-    for r in reservas:
-        if r['status'] == "Aprovada":
-            if r['data'] < data_atual or (r['data'] == data_atual and r['hora_fim'] <= hora_atual):
-                r['status'] = "Concluída (Liberada)"
-                r['data_atualizacao'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                r.setdefault('historico', []).append({
-                    "evento": "Sala liberada automaticamente após uso",
-                    "data_hora": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                    "usuario_id": None
-                })
-    return redirect('/reservas')
-@login_required
-def detalhe_reserva():
-    id_reserva = int(request.args.get('id'))
-    reserva = next((r for r in reservas if r['id'] == id_reserva), None)
-    if not reserva:
-        return redirect('/reservas')
-    sala = next((s for s in salas if str(s['id']) == str(reserva['id_sala'])), None)
-    professor = next((u for u in usuarios if u['id'] == reserva['id_professor']), None)
-    coordenador = None
-    if reserva.get('aprovado_por'):
-        coordenador = next((u for u in usuarios if u['id'] == reserva['aprovado_por']), None)
-    return render_template(
-        'detalhe_reserva.html',
-        reserva=reserva,
-        sala=sala,
-        professor=professor,
-        coordenador=coordenador
-    )
-@login_required
-@roles_required('Coordenador')
-def form_rejeitar_reserva():
-    id_reserva = int(request.args.get('id'))
-    reserva = next((r for r in reservas if r['id'] == id_reserva), None)
+    id_reserva = request.args.get('id')
+    if not id_reserva:
+        return redirect(url_for('listar_reservas'))
+    
+    id_reserva = int(id_reserva)
+    reserva = dados.buscar_reserva_por_id(id_reserva)
+    if reserva:
+        dados.aprovar_reserva_no_banco(id_reserva, session['usuario']['id'])
+        dados.inserir_notificacao(reserva.id_professor, 'Mudança de Status', f"Sua reserva para a sala ID {reserva.id_sala} foi aprovada.")
+    return redirect(url_for('listar_reservas'))
+
+
+def form_rejeitar():
+    id_reserva = request.args.get('id')
+    if not id_reserva:
+        return redirect(url_for('listar_reservas'))
+        
+    id_reserva = int(id_reserva)
+    reserva = dados.buscar_reserva_por_id(id_reserva)
     return render_template('rejeitar_reserva.html', reserva=reserva)
-@login_required
-@roles_required('Coordenador')
+
+
 def processar_rejeicao():
     id_reserva = int(request.form.get('id_reserva'))
-    justificativa = request.form.get('justificativa', 'Sem justificativa informada.')
-    id_coordenador = session.get('usuario_id')
-    for r in reservas:
-        if r['id'] == id_reserva:
-            r['status'] = "Rejeitada"
-            r['aprovado_por'] = id_coordenador
-            r['justificativa_rejeicao'] = justificativa
-            r['data_atualizacao'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            r.setdefault('historico', []).append({
-                "evento": f"Reserva rejeitada. Justificativa: {justificativa}",
-                "data_hora": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "usuario_id": id_coordenador
-            })
-            criar_notificacao_status(r['id_professor'], f"Sua reserva #{id_reserva} foi REJEITADA. Motivo: {justificativa}")
-    return redirect('/reservas')
-def verifica_conflito_horario_oficial(id_sala, data, hora_inicio, hora_fim):
-    try:
-        data_obj = datetime.strptime(data, "%Y-%m-%d")
-        dias_semana = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
-        dia_semana = dias_semana[data_obj.weekday()]
-        inicio_minutos = converter_hora_para_minutos(hora_inicio)
-        fim_minutos = converter_hora_para_minutos(hora_fim)
-        for horario in horarios_oficiais:
-            if str(horario['id_sala']) == str(id_sala) and horario['dia_semana'] == dia_semana:
-                horario_inicio = converter_hora_para_minutos(horario['hora_inicio'])
-                horario_fim = converter_hora_para_minutos(horario['hora_fim'])
-                if inicio_minutos < horario_fim and fim_minutos > horario_inicio:
-                    return True
-        return False
-    except:
-        return False
-def converter_hora_para_minutos(hora_str):
-    try:
-        hora, minuto = map(int, hora_str.split(':'))
-        return hora * 60 + minuto
-    except:
-        return 0
+    justificativa = request.form.get('justificativa')
+    reserva = dados.buscar_reserva_por_id(id_reserva)
+    if reserva:
+        dados.rejeitar_reserva_no_banco(id_reserva, session['usuario']['id'], justificativa)
+        dados.inserir_notificacao(reserva.id_professor, 'Mudança de Status', f"Sua reserva para a sala ID {reserva.id_sala} foi rejeitada. Motivo: {justificativa}")
+    return redirect(url_for('listar_reservas'))
+
+
+def detalhe_reserva():
+    id_reserva = request.args.get('id')
+    if not id_reserva:
+        return redirect(url_for('listar_reservas'))
+        
+    id_reserva = int(id_reserva)
+    reserva = dados.buscar_reserva_por_id(id_reserva)
+    sala = dados.buscar_sala_por_id(reserva.id_sala) if reserva else None
+    professor = dados.buscar_usuario_por_id(reserva.id_professor) if reserva else None
+    coordenador = dados.buscar_usuario_por_id(reserva.aprovado_por) if reserva and reserva.aprovado_por else None
+    return render_template('detalhe_reserva.html', reserva=reserva, sala=sala, professor=professor, coordenador=coordenador)
+
+
+def liberar_reservas_automatico():
+    return redirect(url_for('listar_reservas'))
