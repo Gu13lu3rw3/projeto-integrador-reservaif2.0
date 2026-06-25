@@ -178,7 +178,6 @@ Otimizar a gestão de salas e recursos, garantindo um processo de reserva rápid
  ## Estrutura
 
  Arquivos disponíveis:
- ![banco](database/ddl.sql)
  -`database/ddl.sql`
  -`database/dml.sql`
  -`database/schema.sql`
