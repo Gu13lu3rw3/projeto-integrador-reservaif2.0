@@ -1,136 +1,51 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultar Disponibilidade de Salas - RESERVAIF 2.0</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .container {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            padding: 40px;
-            max-width: 600px;
-            width: 100%;
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 28px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #555;
-            font-weight: 600;
-        }
-        input, select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-            box-sizing: border-box;
-            transition: border-color 0.3s;
-        }
-        input:focus, select:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
-        }
-        .button-group {
-            display: flex;
-            gap: 10px;
-            margin-top: 30px;
-        }
-        button {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .btn-buscar {
-            background-color: #667eea;
-            color: white;
-        }
-        .btn-buscar:hover {
-            background-color: #5568d3;
-        }
-        .btn-voltar {
-            background-color: #e0e0e0;
-            color: #333;
-        }
-        .btn-voltar:hover {
-            background-color: #d0d0d0;
-        }
-        .info {
-            background-color: #f0f4ff;
-            border-left: 4px solid #667eea;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            color: #555;
-            font-size: 14px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>🔍 Consultar Disponibilidade de Salas</h1>
-        
-        <div class="info">
-            <strong>HU01:</strong> Consulte a disponibilidade de salas em um período para evitar conflitos antes de reservar.
+{% extends "base.html" %}
+
+{% block title %}Consultar Disponibilidade - ReservaIF{% endblock %}
+
+{% block content %}
+<div class="section-header">
+    <h2>Consultar Disponibilidade</h2>
+</div>
+
+<div class="card" style="max-width: 600px; margin: 0 auto;">
+    <form action="/disponibilidade/filtrar" method="POST">
+        <div class="form-group">
+            <label for="data">Data da Consulta</label>
+            <input type="date" name="data" id="data" required value="{{ data_atual if data_atual else '' }}">
         </div>
 
-        <form method="POST" action="/disponibilidade/filtrar">
+        <div class="grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
             <div class="form-group">
-                <label for="data">Data da Reserva *</label>
-                <input type="date" id="data" name="data" required>
+                <label for="hora_inicio">Horário de Início</label>
+                <input type="time" name="hora_inicio" id="hora_inicio" required>
             </div>
-
             <div class="form-group">
-                <label for="hora_inicio">Hora de Início *</label>
-                <input type="time" id="hora_inicio" name="hora_inicio" required>
+                <label for="hora_fim">Horário de Término</label>
+                <input type="time" name="hora_fim" id="hora_fim" required>
             </div>
+        </div>
 
-            <div class="form-group">
-                <label for="hora_fim">Hora de Término *</label>
-                <input type="time" id="hora_fim" name="hora_fim" required>
-            </div>
+        <div class="form-group">
+            <label for="id_sala">Sala Específica (Opcional)</label>
+            <select name="id_sala" id="id_sala">
+                <option value="">Todas as Salas</option>
+                {% for s in salas %}
+                <option value="{{ s.id }}">{{ s.nome }}</option>
+                {% endfor %}
+            </select>
+        </div>
 
-            <div class="form-group">
-                <label for="id_sala">Sala (Opcional - deixe em branco para ver todas)</label>
-                <select id="id_sala" name="id_sala">
-                    <option value="">-- Todas as Salas --</option>
-                    {% for sala in salas %}
-                    <option value="{{ sala.id }}">{{ sala.nome }} (Cap: {{ sala.capacidade }}) - {{ sala.localizacao }}</option>
-                    {% endfor %}
-                </select>
-            </div>
+        <div style="margin-top: 32px;">
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                <i class="fas fa-search"></i> Verificar Salas Livres
+            </button>
+        </div>
+    </form>
+</div>
 
-            <div class="button-group">
-                <button type="submit" class="btn-buscar">🔎 Buscar Disponibilidade</button>
-                <button type="button" class="btn-voltar" onclick="window.location.href='/'">← Voltar</button>
-            </div>
-        </form>
-    </div>
-</body>
-</html>
+<div style="margin-top: 40px; text-align: center; color: var(--text-gray);">
+    <p style="font-size: 14px;">
+        <i class="fas fa-info-circle"></i> O sistema cruzará os horários oficiais de aula com as reservas aprovadas para mostrar apenas o que está livre.
+    </p>
+</div>
+{% endblock %}
