@@ -1,1 +1,3 @@
 Sessão de evidências reais da evolução do projeto.
+
+Observações: colocamos a maioria das fotos em png que evidenciam a existência e funcionamento do projeto. Sobre o vídeo de demonstração, adicionamos o link no drive que leva ao vídeo com todos os membros da equipe apresentando suas respectivas partes do projeto (não pudemos colocar o mp4 pois o arquivo ficou num tamanho que excede a capacidade do Gihtub. Devido a isso, adicionamos um segundo vídeo de demonstração apenas com nosso membro Guilherme mostrando como o projeto está atualmente (com a adição final da logo e banner oficiais do IF). Sobre as webcams, não pudemos gravar a apresentação com elas pelo fato de nenhum dos membros ter webcam e a maioria estar pelo próprio celular.
