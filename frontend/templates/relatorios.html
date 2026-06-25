@@ -7,7 +7,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f7fa; min-height: 100vh; }
-        .navbar { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .navbar { background: linear-gradient(135deg, #0F7B3C 0%, #1FA64A 55%, #C8102E 100%); color: white; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; }
         .navbar h1 { font-size: 22px; }
         .navbar a { color: white; text-decoration: none; font-size: 14px; opacity: 0.9; margin-left: 20px; }
         .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
@@ -18,9 +18,8 @@
         .btn-success { background: #28a745; color: white; }
         .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .summary-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid; }
-        .summary-card.blue { border-color: #667eea; }
-        .summary-card.green { border-color: #28a745; }
-        .summary-card.red { border-color: #dc3545; }
+        .summary-card.green { border-color: #0F7B3C; }
+        .summary-card.red { border-color: #C8102E; }
         .summary-card.yellow { border-color: #ffc107; }
         .summary-card.teal { border-color: #17a2b8; }
         .summary-card .value { font-size: 32px; font-weight: 700; color: #333; }
@@ -35,7 +34,7 @@
         .badge-disponivel { background: #d4edda; color: #155724; }
         .badge-bloqueada { background: #f8d7da; color: #721c24; }
         .progress-bar { background: #f0f0f0; border-radius: 4px; height: 14px; overflow: hidden; min-width: 100px; }
-        .progress-fill { height: 100%; background: linear-gradient(90deg, #667eea, #764ba2); border-radius: 4px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #1FA64A, #C8102E); border-radius: 4px; }
         .meta-info { background: #f8f9fa; padding: 12px 20px; font-size: 12px; color: #888; border-top: 1px solid #eee; }
     </style>
 </head>
@@ -57,7 +56,7 @@
             <a href="/relatorios/exportar" class="btn btn-success">⬇️ Exportar CSV</a>
         </div>
         <div class="summary-grid">
-            <div class="summary-card blue">
+            <div class="summary-card green">
                 <div class="value">{{ total_reservas }}</div>
                 <div class="label">Total de Reservas</div>
             </div>
