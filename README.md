@@ -7,9 +7,9 @@
 ## Equipe
 - **Guilherme Silva** (Product Owner)
 - **Carlos Eduardo Fernandes** (Scrum Master)
+- **Allana Marina** (Desenvolvedora)
 - **Antônio Marcos Pires** (Desenvolvedor)
 - **Christian Souza** (Desenvolvedor)
-- **Allana Marina** (Desenvolvedora)
 
 ## Disciplina
 Projeto Integrador
