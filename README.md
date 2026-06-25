@@ -250,8 +250,24 @@ Todas as Histórias de Usuário (HUs) listadas no backlog foram implementadas e 
 
 # 12. Evidências do Projeto
 
-Todas as funcionalidades foram implementadas e testadas. As evidências de funcionamento serão adicionadas em breve, após a conclusão dos testes finais e a preparação da documentação de entrega.
+## Sistema Rodando
+![Sistema](docs/apresentacao/sistema-rodando.png)
 
+## Tela Login Real
+![Login Real](docs/apresentacao/login-funcionando.png)
+
+## Dashboard Implementado
+![Dashboard Real](docs/apresentacao/dashboard-real.png)
+
+## Banco Funcionando
+![Banco](docs/apresentacao/banco-funcionando.png)
+
+## API Testada
+![API](docs/apresentacao/api-postman.png)
+
+## Demonstração
+Inserir vídeo:
+`docs/apresentacao/demo.mp4`
 ---
 
 # 13. Como Executar o Projeto
